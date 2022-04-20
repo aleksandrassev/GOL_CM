@@ -1,0 +1,5 @@
+D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/CMakeFiles/GOL_SERVER.dir
+D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/CMakeFiles/edit_cache.dir
+D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/CMakeFiles/GOL_SERVER_autogen_timestamp_deps.dir
+D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/CMakeFiles/GOL_SERVER_autogen.dir
