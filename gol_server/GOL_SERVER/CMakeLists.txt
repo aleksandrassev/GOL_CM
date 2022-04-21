@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.20)
 
-project(GOL_SERVER LANGUAGES CXX)
+project(GOL_SERV_CM LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -11,10 +11,22 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
+include_directories(tests)
 
-add_executable(GOL_SERVER
-  main.cpp
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
 )
-target_link_libraries(GOL_SERVER Qt${QT_VERSION_MAJOR}::Core)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Network)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Network)
+
+add_executable(GOL_SERV_CM
+  main.cpp
+  IField.h
+)
+
+target_link_libraries(GOL_SERV_CM Qt${QT_VERSION_MAJOR}::Core Qt6::Network gtest gtest_main)
