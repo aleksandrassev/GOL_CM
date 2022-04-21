@@ -23,10 +23,15 @@ FetchContent_MakeAvailable(googletest)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Network)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Network)
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets)
 
 add_executable(GOL_SERV_CM
-  main.cpp
-  IField.h
+  #main.cpp
+  ifield.h
+  field.h
+  field.cpp
+  tests/field_test.h
+  tests/field_test.cpp
 )
 
 target_link_libraries(GOL_SERV_CM Qt${QT_VERSION_MAJOR}::Core Qt6::Network gtest gtest_main)
