@@ -1,19 +1,18 @@
 #include "field_test.h"
+#include <vector>
 
 
-TEST_F(Field_test, constructor_values)
+TEST_F(Field_test, constructor)
 {
-    ASSERT_NO_THROW(Field field(7, 6));
-}
+    std::vector<std::vector<bool>> vector{{0,0}, {0,0}, {0,0}, {0,0}};
 
-TEST_F(Field_test, constructor_negative_values)
-{
-    ASSERT_THROW(Field field(-11, 6), std::length_error);
+    ASSERT_NO_THROW(Field field(vector));
 }
 
 TEST_F(Field_test, get_rows)
 {
-    Field field(10, 15);
+    std::vector<std::vector<bool>> vector(10, std::vector<bool>(15));
+    Field field(vector);
 
     EXPECT_EQ(field.getRowSize(), 10);
     EXPECT_NE(field.getRowSize(), 15);
@@ -21,7 +20,8 @@ TEST_F(Field_test, get_rows)
 
 TEST_F(Field_test, get_cols)
 {
-    Field field(10, 15);
+    std::vector<std::vector<bool>> vector(10, std::vector<bool>(15));
+    Field field(vector);
 
     EXPECT_EQ(field.getColSize(), 15);
     EXPECT_NE(field.getColSize(), 10);
@@ -29,7 +29,8 @@ TEST_F(Field_test, get_cols)
 
 TEST_F(Field_test, get_cell_status)
 {
-    Field field(10, 15);
+    std::vector<std::vector<bool>> vector(10, std::vector<bool>(15));
+    Field field(vector);
 
     EXPECT_EQ(field.getCellStatus(7, 6), false);
     EXPECT_NE(field.getCellStatus(5, 4), true);
@@ -38,7 +39,9 @@ TEST_F(Field_test, get_cell_status)
 
 TEST_F(Field_test, set_cell_status)
 {
-    Field field(9, 20);
+    std::vector<std::vector<bool>> vector(9, std::vector<bool>(20));
+    Field field(vector);
+
     field.setCellStatus(8, 7, true);
 
     EXPECT_NE(field.getCellStatus(8, 7), false);
@@ -48,7 +51,9 @@ TEST_F(Field_test, set_cell_status)
 
 TEST_F(Field_test, find_neighbours)
 {
-    Field field(10, 10);
+    std::vector<std::vector<bool>> vector(10, std::vector<bool>(10));
+    Field field(vector);
+
     field.setCellStatus(5, 5, true);
 
     EXPECT_TRUE(field.findNeighbours(5, 5) == 0);

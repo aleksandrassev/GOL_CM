@@ -8,8 +8,8 @@
 class Field_test : public ::testing::Test
 {
 protected:
-    Field_test() {};
-    virtual ~Field_test() {};
+    Field_test() = default;
+    virtual ~Field_test() = default;
 };
 
 #endif // FIELD_TEST_H

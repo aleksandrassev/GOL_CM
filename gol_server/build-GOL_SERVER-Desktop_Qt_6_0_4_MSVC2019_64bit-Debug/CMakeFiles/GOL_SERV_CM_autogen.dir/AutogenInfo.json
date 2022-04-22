@@ -235,15 +235,33 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.h",
+			"MU",
+			"EWIEGA46WW/moc_encoder.cpp",
+			null
+		],
+		[
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.h",
 			"MU",
 			"EWIEGA46WW/moc_field.cpp",
 			null
 		],
 		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iencoder.h",
+			"MU",
+			"EWIEGA46WW/moc_iencoder.cpp",
+			null
+		],
+		[
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/ifield.h",
 			"MU",
 			"EWIEGA46WW/moc_ifield.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_encoder_test.cpp",
 			null
 		],
 		[
@@ -303,7 +321,13 @@
 	"SETTINGS_FILE" : "D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/CMakeFiles/GOL_SERV_CM_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.cpp", "MU", null ],
 		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.cpp", "MU", null ],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp",
+			"MU",
+			null
+		],
 		[
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp",
 			"MU",

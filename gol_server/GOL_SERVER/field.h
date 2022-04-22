@@ -7,7 +7,7 @@
 class Field : public IField
 {
 public:
-    Field(int rows, int cols);
+    Field(std::vector<std::vector<bool>> &vector);
     ~Field() override = default;
 
     bool getCellStatus(int positionX, int positionY) const override;
@@ -17,7 +17,7 @@ public:
     int getColSize() const;
 
 protected:
-    std::vector<std::vector<bool>> m_2Dvector;
+    std::vector<std::vector<bool>> m_vector;
 };
 
 #endif // FIELD_H

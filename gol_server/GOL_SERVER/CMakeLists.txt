@@ -30,8 +30,13 @@ add_executable(GOL_SERV_CM
   ifield.h
   field.h
   field.cpp
+  iencoder.h
+  encoder.h
+  encoder.cpp
   tests/field_test.h
   tests/field_test.cpp
+  tests/encoder_test.h
+  tests/encoder_test.cpp
 )
 
 target_link_libraries(GOL_SERV_CM Qt${QT_VERSION_MAJOR}::Core Qt6::Network gtest gtest_main)

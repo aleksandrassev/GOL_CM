@@ -107,9 +107,14 @@ GOL_SERV_CM_autogen/timestamp: \
   D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/SelectLibraryConfigurations.cmake \
   D:/Qt/Tools/QtCreator/share/qtcreator/package-manager/auto-setup.cmake \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/CMakeLists.txt \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.cpp \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.cpp \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.h \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iencoder.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/ifield.h \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.h \
   CMakeFiles/3.21.1/CMakeCXXCompiler.cmake \
