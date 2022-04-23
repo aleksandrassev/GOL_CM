@@ -6,7 +6,7 @@
 #include "encoder.h"
 #include <QDebug>
 
-class Encoder_test : public ::testing::Test
+class Encoder_test: public:: testing:: Test
 {
 protected:
     Encoder_test() = default;

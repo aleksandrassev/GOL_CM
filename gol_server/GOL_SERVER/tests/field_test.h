@@ -5,7 +5,7 @@
 #include "field.h"
 #include <QDebug>
 
-class Field_test : public ::testing::Test
+class Field_test: public:: testing:: Test
 {
 protected:
     Field_test() = default;
