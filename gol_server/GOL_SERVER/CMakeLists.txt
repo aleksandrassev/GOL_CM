@@ -34,8 +34,8 @@ add_executable(GOL_SERV_CM
   encoder.h
   encoder.cpp
   icycle.h
-#  cycle.h
-#  cycle.cpp
+  cycle.h
+  cycle.cpp
   irules.h
   rules.h
   rules.cpp
@@ -43,8 +43,8 @@ add_executable(GOL_SERV_CM
   tests/field_test.cpp
   tests/encoder_test.h
   tests/encoder_test.cpp
-#  tests/cycle_test.h
-#  tests/cycle_test.cpp
+  tests/cycle_test.h
+  tests/cycle_test.cpp
   tests/rules_test.h
   tests/rules_test.cpp
 )

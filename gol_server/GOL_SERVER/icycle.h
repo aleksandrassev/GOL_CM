@@ -2,11 +2,13 @@
 #define ICYCLE_H
 
 #include <QString>
+#include "field.h"
+
 
 class ICycle
 {
 public:
-    virtual QString nextGeneration() = 0;
+    virtual QString nextGeneration(Field* field) = 0;
 
 protected:
     virtual ~ICycle() = default;

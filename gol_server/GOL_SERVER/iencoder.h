@@ -6,6 +6,7 @@
 
 class IEncoder
 {
+public:
     virtual QString encode(const Field* field) = 0;
     virtual Field decode(const QString& str) = 0;
 

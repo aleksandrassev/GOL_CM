@@ -235,6 +235,12 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/cycle.h",
+			"MU",
+			"EWIEGA46WW/moc_cycle.cpp",
+			null
+		],
+		[
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.h",
 			"MU",
 			"EWIEGA46WW/moc_encoder.cpp",
@@ -244,6 +250,12 @@
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.h",
 			"MU",
 			"EWIEGA46WW/moc_field.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/icycle.h",
+			"MU",
+			"EWIEGA46WW/moc_icycle.cpp",
 			null
 		],
 		[
@@ -259,6 +271,24 @@
 			null
 		],
 		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/irules.h",
+			"MU",
+			"EWIEGA46WW/moc_irules.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.h",
+			"MU",
+			"EWIEGA46WW/moc_rules.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_cycle_test.cpp",
+			null
+		],
+		[
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.h",
 			"MU",
 			"KRHXW7JQHD/moc_encoder_test.cpp",
@@ -268,6 +298,12 @@
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.h",
 			"MU",
 			"KRHXW7JQHD/moc_field_test.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_rules_test.cpp",
 			null
 		]
 	],
@@ -321,8 +357,15 @@
 	"SETTINGS_FILE" : "D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/CMakeFiles/GOL_SERV_CM_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/cycle.cpp", "MU", null ],
 		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.cpp", "MU", null ],
 		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.cpp", "MU", null ],
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.cpp", "MU", null ],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp",
+			"MU",
+			null
+		],
 		[
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp",
 			"MU",
@@ -330,6 +373,11 @@
 		],
 		[
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp",
 			"MU",
 			null
 		]

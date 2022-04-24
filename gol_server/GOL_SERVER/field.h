@@ -11,10 +11,10 @@ public:
     ~Field() override = default;
 
     bool getCellStatus(int positionX, int positionY) const override;
-    virtual void setCellStatus(int positionX, int positionY, bool status) override;
-    virtual int findNeighbours(int positionX, int positionY) const override;
-    int getRowSize() const;
-    int getColSize() const;
+    void setCellStatus(int positionX, int positionY, bool status) override;
+    int findNeighbours(int positionX, int positionY) const override;
+    int getRowSize() const override;
+    int getColSize() const override;
 
 protected:
     std::vector<std::vector<bool>> m_vector;
