@@ -1,5 +1,7 @@
 GOL_SERV_CM_autogen/timestamp: \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/QObject \
+  D:/Qt/6.0.4/msvc2019_64/include/QtCore/QString \
+  D:/Qt/6.0.4/msvc2019_64/include/QtCore/QTimer \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qanystringview.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qarraydata.h \
@@ -7,6 +9,7 @@ GOL_SERV_CM_autogen/timestamp: \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qarraydatapointer.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qatomic.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qbasicatomic.h \
+  D:/Qt/6.0.4/msvc2019_64/include/QtCore/qbasictimer.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qbytearray.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qbytearrayalgorithms.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qbytearraylist.h \
@@ -67,6 +70,7 @@ GOL_SERV_CM_autogen/timestamp: \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qtaggedpointer.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qtcore-config.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qtextstream.h \
+  D:/Qt/6.0.4/msvc2019_64/include/QtCore/qtimer.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qtmetamacros.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qtypeinfo.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qutf8stringview.h \
@@ -195,6 +199,8 @@ GOL_SERV_CM_autogen/timestamp: \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.cpp \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.h \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/game.cpp \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/game.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/icycle.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iencoder.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/ifield.h \
@@ -209,6 +215,8 @@ GOL_SERV_CM_autogen/timestamp: \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.h \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.cpp \

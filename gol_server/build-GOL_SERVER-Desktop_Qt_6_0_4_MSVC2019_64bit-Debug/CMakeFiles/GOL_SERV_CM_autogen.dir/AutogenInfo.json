@@ -232,7 +232,105 @@
 	"CMAKE_SOURCE_DIR" : "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER",
 	"DEP_FILE" : "D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/GOL_SERV_CM_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "GOL_SERV_CM_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/cycle.h",
+			"MU",
+			"EWIEGA46WW/moc_cycle.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.h",
+			"MU",
+			"EWIEGA46WW/moc_encoder.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.h",
+			"MU",
+			"EWIEGA46WW/moc_field.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/game.h",
+			"MU",
+			"EWIEGA46WW/moc_game.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/icycle.h",
+			"MU",
+			"EWIEGA46WW/moc_icycle.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iencoder.h",
+			"MU",
+			"EWIEGA46WW/moc_iencoder.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/ifield.h",
+			"MU",
+			"EWIEGA46WW/moc_ifield.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/irules.h",
+			"MU",
+			"EWIEGA46WW/moc_irules.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.h",
+			"MU",
+			"EWIEGA46WW/moc_rules.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/server.h",
+			"MU",
+			"EWIEGA46WW/moc_server.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_cycle_test.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_encoder_test.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_field_test.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_game_test.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_rules_test.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.h",
+			"MU",
+			"KRHXW7JQHD/moc_server_test.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/GOL_SERV_CM_autogen/include",
 	"MOC_COMPILATION_FILE" : "D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/GOL_SERV_CM_autogen/mocs_compilation.cpp",
@@ -281,7 +379,45 @@
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 0,
 	"SETTINGS_FILE" : "D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/CMakeFiles/GOL_SERV_CM_autogen.dir/AutogenUsed.txt",
-	"SOURCES" : [],
+	"SOURCES" : 
+	[
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/cycle.cpp", "MU", null ],
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.cpp", "MU", null ],
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.cpp", "MU", null ],
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/game.cpp", "MU", null ],
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.cpp", "MU", null ],
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/server.cpp", "MU", null ],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.cpp",
+			"MU",
+			null
+		]
+	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : [],

@@ -103,6 +103,15 @@ build CMakeFiles\GOL_SERV_CM.dir\server.cpp.obj: CXX_COMPILER__GOL_SERV_CM_Debug
   TARGET_COMPILE_PDB = CMakeFiles\GOL_SERV_CM.dir\
   TARGET_PDB = GOL_SERV_CM.pdb
 
+build CMakeFiles\GOL_SERV_CM.dir\game.cpp.obj: CXX_COMPILER__GOL_SERV_CM_Debug D$:\QtProjects\GOL_CM\gol_server\GOL_SERVER\game.cpp || cmake_object_order_depends_target_GOL_SERV_CM
+  DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zc:__cplusplus -permissive- -utf-8 -std:c++17
+  INCLUDES = -ID:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug -ID:\QtProjects\GOL_CM\gol_server\GOL_SERVER -ID:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\GOL_SERV_CM_autogen\include -ID:\QtProjects\GOL_CM\gol_server\GOL_SERVER\tests -ID:\Qt\6.0.4\msvc2019_64\include\QtCore -ID:\Qt\6.0.4\msvc2019_64\include -ID:\Qt\6.0.4\msvc2019_64\mkspecs\win32-msvc -ID:\Qt\6.0.4\msvc2019_64\include\QtNetwork -ID:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\_deps\googletest-src\googletest\include -ID:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\_deps\googletest-src\googletest
+  OBJECT_DIR = CMakeFiles\GOL_SERV_CM.dir
+  OBJECT_FILE_DIR = CMakeFiles\GOL_SERV_CM.dir
+  TARGET_COMPILE_PDB = CMakeFiles\GOL_SERV_CM.dir\
+  TARGET_PDB = GOL_SERV_CM.pdb
+
 build CMakeFiles\GOL_SERV_CM.dir\tests\field_test.cpp.obj: CXX_COMPILER__GOL_SERV_CM_Debug D$:\QtProjects\GOL_CM\gol_server\GOL_SERVER\tests\field_test.cpp || cmake_object_order_depends_target_GOL_SERV_CM
   DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zc:__cplusplus -permissive- -utf-8 -std:c++17
@@ -148,6 +157,15 @@ build CMakeFiles\GOL_SERV_CM.dir\tests\server_test.cpp.obj: CXX_COMPILER__GOL_SE
   TARGET_COMPILE_PDB = CMakeFiles\GOL_SERV_CM.dir\
   TARGET_PDB = GOL_SERV_CM.pdb
 
+build CMakeFiles\GOL_SERV_CM.dir\tests\game_test.cpp.obj: CXX_COMPILER__GOL_SERV_CM_Debug D$:\QtProjects\GOL_CM\gol_server\GOL_SERVER\tests\game_test.cpp || cmake_object_order_depends_target_GOL_SERV_CM
+  DEFINES = -DQT_CORE_LIB -DQT_NETWORK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd -Zc:__cplusplus -permissive- -utf-8 -std:c++17
+  INCLUDES = -ID:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug -ID:\QtProjects\GOL_CM\gol_server\GOL_SERVER -ID:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\GOL_SERV_CM_autogen\include -ID:\QtProjects\GOL_CM\gol_server\GOL_SERVER\tests -ID:\Qt\6.0.4\msvc2019_64\include\QtCore -ID:\Qt\6.0.4\msvc2019_64\include -ID:\Qt\6.0.4\msvc2019_64\mkspecs\win32-msvc -ID:\Qt\6.0.4\msvc2019_64\include\QtNetwork -ID:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\_deps\googletest-src\googletest\include -ID:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\_deps\googletest-src\googletest
+  OBJECT_DIR = CMakeFiles\GOL_SERV_CM.dir
+  OBJECT_FILE_DIR = CMakeFiles\GOL_SERV_CM.dir\tests
+  TARGET_COMPILE_PDB = CMakeFiles\GOL_SERV_CM.dir\
+  TARGET_PDB = GOL_SERV_CM.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target GOL_SERV_CM
@@ -156,7 +174,7 @@ build CMakeFiles\GOL_SERV_CM.dir\tests\server_test.cpp.obj: CXX_COMPILER__GOL_SE
 #############################################
 # Link the executable GOL_SERV_CM.exe
 
-build GOL_SERV_CM.exe: CXX_EXECUTABLE_LINKER__GOL_SERV_CM_Debug CMakeFiles\GOL_SERV_CM.dir\GOL_SERV_CM_autogen\mocs_compilation.cpp.obj CMakeFiles\GOL_SERV_CM.dir\field.cpp.obj CMakeFiles\GOL_SERV_CM.dir\encoder.cpp.obj CMakeFiles\GOL_SERV_CM.dir\cycle.cpp.obj CMakeFiles\GOL_SERV_CM.dir\rules.cpp.obj CMakeFiles\GOL_SERV_CM.dir\server.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\field_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\encoder_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\cycle_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\rules_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\server_test.cpp.obj | D$:\Qt\6.0.4\msvc2019_64\lib\Qt6Networkd.lib lib\gtestd.lib lib\gtest_maind.lib D$:\Qt\6.0.4\msvc2019_64\lib\Qt6Cored.lib lib\gtestd.lib || GOL_SERV_CM_autogen GOL_SERV_CM_autogen_timestamp_deps lib\gtest_maind.lib lib\gtestd.lib
+build GOL_SERV_CM.exe: CXX_EXECUTABLE_LINKER__GOL_SERV_CM_Debug CMakeFiles\GOL_SERV_CM.dir\GOL_SERV_CM_autogen\mocs_compilation.cpp.obj CMakeFiles\GOL_SERV_CM.dir\field.cpp.obj CMakeFiles\GOL_SERV_CM.dir\encoder.cpp.obj CMakeFiles\GOL_SERV_CM.dir\cycle.cpp.obj CMakeFiles\GOL_SERV_CM.dir\rules.cpp.obj CMakeFiles\GOL_SERV_CM.dir\server.cpp.obj CMakeFiles\GOL_SERV_CM.dir\game.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\field_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\encoder_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\cycle_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\rules_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\server_test.cpp.obj CMakeFiles\GOL_SERV_CM.dir\tests\game_test.cpp.obj | D$:\Qt\6.0.4\msvc2019_64\lib\Qt6Networkd.lib lib\gtestd.lib lib\gtest_maind.lib D$:\Qt\6.0.4\msvc2019_64\lib\Qt6Cored.lib lib\gtestd.lib || GOL_SERV_CM_autogen GOL_SERV_CM_autogen_timestamp_deps lib\gtest_maind.lib lib\gtestd.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = D:\Qt\6.0.4\msvc2019_64\lib\Qt6Networkd.lib  lib\gtestd.lib  lib\gtest_maind.lib  D:\Qt\6.0.4\msvc2019_64\lib\Qt6Cored.lib  mpr.lib  userenv.lib  ws2_32.lib  lib\gtestd.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

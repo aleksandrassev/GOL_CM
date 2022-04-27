@@ -41,7 +41,6 @@ add_executable(GOL_SERV_CM
   rules.cpp
   server.h
   server.cpp
-  igame.h
   game.h
   game.cpp
   tests/field_test.h

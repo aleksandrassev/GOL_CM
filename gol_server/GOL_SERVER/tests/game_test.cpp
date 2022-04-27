@@ -1,6 +1,8 @@
 #include "game_test.h"
 
-Game_test::Game_test()
+TEST_F(Game_test, start)
 {
+    Game game;
 
+    game.start();
 }
