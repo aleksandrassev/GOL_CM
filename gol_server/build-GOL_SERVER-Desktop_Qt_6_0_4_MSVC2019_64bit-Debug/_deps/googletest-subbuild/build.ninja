@@ -102,9 +102,9 @@ build googletest-populate-prefix\src\googletest-populate-stamp\googletest-popula
 #############################################
 # Custom command for googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-download
 
-build googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-download | ${cmake_ninja_workdir}googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-download: CUSTOM_COMMAND googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-urlinfo.txt googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-mkdir
-  COMMAND = cmd.exe /C "cd /D D:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\_deps && D:\Qt\Tools\CMake_64\bin\cmake.exe -P D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake && D:\Qt\Tools\CMake_64\bin\cmake.exe -P D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/verify-googletest-populate.cmake && D:\Qt\Tools\CMake_64\bin\cmake.exe -P D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download"
-  DESC = Performing download step (download, verify and extract) for 'googletest-populate'
+build googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-download | ${cmake_ninja_workdir}googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-download: CUSTOM_COMMAND googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-gitinfo.txt googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-mkdir
+  COMMAND = cmd.exe /C "cd /D D:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\_deps && D:\Qt\Tools\CMake_64\bin\cmake.exe -P D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-subbuild/googletest-populate-prefix/tmp/googletest-populate-gitclone.cmake && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download"
+  DESC = Performing download step (git clone) for 'googletest-populate'
   pool = console
   restat = 1
 
@@ -149,10 +149,9 @@ build googletest-populate-prefix\src\googletest-populate-stamp\googletest-popula
 # Custom command for googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-update
 
 build googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-update | ${cmake_ninja_workdir}googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-update: CUSTOM_COMMAND googletest-populate-prefix\src\googletest-populate-stamp\googletest-populate-download
-  COMMAND = cmd.exe /C "cd /D D:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\_deps\googletest-subbuild && D:\Qt\Tools\CMake_64\bin\cmake.exe -E echo_append && D:\Qt\Tools\CMake_64\bin\cmake.exe -E touch D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update"
-  DESC = No update step for 'googletest-populate'
+  COMMAND = cmd.exe /C "cd /D D:\QtProjects\GOL_CM\gol_server\build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug\_deps\googletest-src && D:\Qt\Tools\CMake_64\bin\cmake.exe -P D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-subbuild/googletest-populate-prefix/tmp/googletest-populate-gitupdate.cmake"
+  DESC = Performing update step for 'googletest-populate'
   pool = console
-  restat = 1
 
 # =============================================================================
 # Target aliases.
@@ -174,14 +173,14 @@ build all: phony googletest-populate
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles\3.21.1\CMakeSystem.cmake CMakeLists.txt D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeGenericSystem.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\ExternalProject-download.cmake.in D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\ExternalProject.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\Platform\Windows.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\RepositoryInfo.txt.in googletest-populate-prefix\tmp\googletest-populate-cfgcmd.txt.in
+build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles\3.21.1\CMakeSystem.cmake CMakeLists.txt D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeGenericSystem.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\ExternalProject-gitupdate.cmake.in D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\ExternalProject.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\Platform\Windows.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\RepositoryInfo.txt.in googletest-populate-prefix\tmp\googletest-populate-cfgcmd.txt.in
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build CMakeCache.txt CMakeFiles\3.21.1\CMakeSystem.cmake CMakeLists.txt D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeGenericSystem.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\ExternalProject-download.cmake.in D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\ExternalProject.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\Platform\Windows.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\RepositoryInfo.txt.in googletest-populate-prefix\tmp\googletest-populate-cfgcmd.txt.in: phony
+build CMakeCache.txt CMakeFiles\3.21.1\CMakeSystem.cmake CMakeLists.txt D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeGenericSystem.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeInitializeConfigs.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeSystemSpecificInformation.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\CMakeSystemSpecificInitialize.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\ExternalProject-gitupdate.cmake.in D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\ExternalProject.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\Platform\Windows.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\Platform\WindowsPaths.cmake D$:\Qt\Tools\CMake_64\share\cmake-3.21\Modules\RepositoryInfo.txt.in googletest-populate-prefix\tmp\googletest-populate-cfgcmd.txt.in: phony
 
 
 #############################################

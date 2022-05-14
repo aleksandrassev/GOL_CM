@@ -2,12 +2,13 @@
 #define IENCODER_H
 
 #include <QString>
+#include <ifield.h>
 #include <field.h>
 
 class IEncoder
 {
 public:
-    virtual QString encode(const Field* field) = 0;
+    virtual QString encode(const IField* field) = 0;
     virtual Field decode(const QString& str) = 0;
 
 protected:

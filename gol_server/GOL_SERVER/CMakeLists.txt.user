@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.0, 2022-04-27T21:49:47. -->
+<!-- Written by QtCreator 7.0.1, 2022-05-13T23:25:05. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -69,7 +69,7 @@
    </valuemap>
    <valuemap type="QVariantMap" key="AutoTest.CheckStates">
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:Cycle_test">Checked</value>
-    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:next_generation">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:next_generation2">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:Encoder_test">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:decode">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:encode">Checked</value>
@@ -80,6 +80,9 @@
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:get_cols">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:get_rows">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:set_cell_status">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:Game_test">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:onReadyRead">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:start">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp:First_rule">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp:Fourth_rule">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp:Rules_test">Checked</value>
@@ -88,8 +91,6 @@
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.cpp:Server_test">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.cpp:constructor">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.cpp:constructor_server_start">Checked</value>
-    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.cpp:server_new_connect">Checked</value>
-    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.cpp:server_write">Checked</value>
    </valuemap>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>
    <value type="bool" key="AutoTest.UseGlobal">true</value>

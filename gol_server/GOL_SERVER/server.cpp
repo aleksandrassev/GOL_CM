@@ -2,19 +2,21 @@
 
 Server::Server(QObject *parent)
     : QObject{parent}
+    , m_callback{nullptr}
 {
     m_server = new QTcpServer();
-    connect(m_server, &QTcpServer::newConnection, this, &Server::newConnect);
-    start();
+    connect(m_server, &QTcpServer::newConnection, this, &Server::onNewConnection);
+    onStart();
 }
 
 Server::~Server()
 {
+    m_callback = nullptr; // ?????
     m_server -> close();
     delete m_server;
 }
 
-void Server::start()
+void Server::onStart()
 {
     if(!m_server->listen(QHostAddress::LocalHost, 12345))
     {
@@ -24,11 +26,17 @@ void Server::start()
     qDebug()<<"Server started! Waiting for client...";
 }
 
-void Server::newConnect()
+void Server::onNewConnection()
 {
+    if (m_callback != nullptr)
+    {
+        m_callback->onNewConnection();
+    }
+
     m_socket = m_server->nextPendingConnection();
 
-    connect(m_socket, &QTcpSocket::disconnected, this, &Server::disconnected);
+    connect(m_socket, &QTcpSocket::readyRead, this, &Server::onReadyRead);
+    connect(m_socket, &QTcpSocket::disconnected, this, &Server::onDisconnected);
 
     qDebug()<<"Connected!";
 }
@@ -46,7 +54,7 @@ void Server::writeData(QString buffer)
     m_socket->flush();
 }
 
-void Server::disconnected()
+void Server::onDisconnected()
 {
     qDebug()<<"Disconnected...";
 }
@@ -61,3 +69,15 @@ QTcpServer* Server::getServer()
     return m_server;
 }
 
+void Server::registerSignal(IServerSignal* callback)
+{
+    m_callback = callback;
+}
+
+void Server::onReadyRead()
+{
+    if (m_callback != nullptr)
+    {
+        m_callback->onReadyRead();
+    }
+}

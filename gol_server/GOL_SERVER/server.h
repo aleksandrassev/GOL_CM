@@ -5,8 +5,10 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 
+#include <iserver.h>
+#include <iserver_signal.h>
 
-class Server : public QObject
+class Server : public QObject, public IServer
 {
     Q_OBJECT
 public:
@@ -15,17 +17,20 @@ public:
 
     QTcpSocket* getSocket();
     QTcpServer* getServer();
-    QByteArray readData();
-    void writeData(QString buffer);
+    QByteArray readData() override;
+    void registerSignal(IServerSignal* callback) override;
+    void writeData(QString buffer) override;
 
 private slots:
-    void start();
-    void newConnect();
-    void disconnected();
+    void onStart();
+    void onReadyRead();
+    void onNewConnection();
+    void onDisconnected();
 
 private:
     QTcpServer* m_server;
     QTcpSocket* m_socket;
+    IServerSignal* m_callback;
 
 
 };

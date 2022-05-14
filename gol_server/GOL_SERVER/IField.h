@@ -12,7 +12,6 @@ public:
     virtual int getRowSize() const = 0;
     virtual int getColSize() const = 0;
 
-protected:
     virtual ~IField() = default;
 };
 

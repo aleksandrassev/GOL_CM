@@ -7,6 +7,7 @@
 class Field : public IField
 {
 public:
+    Field() = default;
     Field(std::vector<std::vector<bool>> &vector);
     ~Field() override = default;
 

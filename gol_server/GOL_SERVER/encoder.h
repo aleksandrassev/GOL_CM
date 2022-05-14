@@ -9,7 +9,7 @@ public:
     Encoder() = default;
     ~Encoder() override = default;
 
-    QString encode(const Field* field) override;
+    QString encode(const IField* field) override;
     Field decode(const QString& str) override;
 };
 

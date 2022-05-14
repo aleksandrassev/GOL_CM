@@ -26,6 +26,9 @@
 		"D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeRCInformation.cmake",
 		"D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake",
 		"D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FetchContent.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindGit.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake",
+		"D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindPackageMessage.cmake",
 		"D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FetchContent/CMakeLists.cmake.in",
 		"D:/Qt/6.0.4/msvc2019_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"D:/Qt/6.0.4/msvc2019_64/lib/cmake/Qt6/Qt6Config.cmake",
@@ -283,6 +286,18 @@
 			null
 		],
 		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iserver.h",
+			"MU",
+			"EWIEGA46WW/moc_iserver.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iserver_signal.h",
+			"MU",
+			"EWIEGA46WW/moc_iserver_signal.cpp",
+			null
+		],
+		[
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.h",
 			"MU",
 			"EWIEGA46WW/moc_rules.cpp",
@@ -316,6 +331,18 @@
 			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.h",
 			"MU",
 			"KRHXW7JQHD/moc_game_test.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/mockencoder.h",
+			"MU",
+			"KRHXW7JQHD/moc_mockencoder.cpp",
+			null
+		],
+		[
+			"D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/mockserver.h",
+			"MU",
+			"KRHXW7JQHD/moc_mockserver.cpp",
 			null
 		],
 		[
@@ -362,7 +389,9 @@
 		"D:/Qt/6.0.4/msvc2019_64/mkspecs/win32-msvc",
 		"D:/Qt/6.0.4/msvc2019_64/include/QtNetwork",
 		"D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-src/googletest/include",
-		"D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-src/googletest"
+		"D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-src/googletest",
+		"D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-src/googlemock/include",
+		"D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/_deps/googletest-src/googlemock"
 	],
 	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
 	"MOC_OPTIONS" : [],
@@ -385,6 +414,7 @@
 		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/encoder.cpp", "MU", null ],
 		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/field.cpp", "MU", null ],
 		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/game.cpp", "MU", null ],
+		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/main.cpp", "MU", null ],
 		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.cpp", "MU", null ],
 		[ "D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/server.cpp", "MU", null ],
 		[

@@ -179,6 +179,7 @@ GOL_SERV_CM_autogen/timestamp: \
 	D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/Compiler/MSVC-CXX.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FetchContent.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FetchContent/CMakeLists.cmake.in \
+	D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindGit.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindOpenSSL.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake \
 	D:/Qt/Tools/CMake_64/share/cmake-3.21/Modules/FindPackageMessage.cmake \
@@ -205,6 +206,9 @@ GOL_SERV_CM_autogen/timestamp: \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iencoder.h \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/ifield.h \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/irules.h \
+	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iserver.h \
+	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iserver_signal.h \
+	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/main.cpp \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.cpp \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.h \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/server.cpp \
@@ -217,6 +221,8 @@ GOL_SERV_CM_autogen/timestamp: \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.h \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.h \
+	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/mockencoder.h \
+	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/mockserver.h \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.h \
 	D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/server_test.cpp \

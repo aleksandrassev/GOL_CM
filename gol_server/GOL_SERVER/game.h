@@ -6,31 +6,32 @@
 #include "encoder.h"
 #include "rules.h"
 #include "server.h"
+#include "iserver_signal.h"
 
 
-class Game : public QObject
+class Game : public QObject, public IServerSignal
 {
     Q_OBJECT
 public:
-    explicit Game(QObject *parent = nullptr);
+    explicit Game(QObject *parent = nullptr, IServer* server = nullptr);
     ~Game();
 
-public slots:
-    void start();
     void run();
-    void initialize();
     void restart();
+    void onNewConnection() override;
+    void onReadyRead() override;
 
 private:
     QTimer *m_timer;
     Cycle *m_cycle;
-    Server *m_server;
+    IServer *m_server;
     Encoder* m_encoder;
     Rules* m_rules;
     Field* m_field;
+    Field* m_nextField;
 
-    int m_cycleInterval = 300;
-    int m_counter = 0;
+    int m_cycleInterval;
+    int m_counter;
 };
 
 #endif // GAME_H

@@ -10,14 +10,17 @@
 class Cycle : public ICycle
 {
 public:
-  Cycle(IEncoder* encoder, IRules* rules);
+  Cycle(IEncoder* encoder, IRules* rules, IField* field, IField* nextField);
   ~Cycle() override;
 
-  QString nextGeneration(Field* field) override;
+  QString nextGeneration() override;
+  void applyRule(int cellPosX, int cellPosY, IField* field, IField* nextField);
 
 private:
   IEncoder* m_encoder;
   IRules* m_rules;
+  IField* m_field;
+  IField* m_nextField;
 
 
 };

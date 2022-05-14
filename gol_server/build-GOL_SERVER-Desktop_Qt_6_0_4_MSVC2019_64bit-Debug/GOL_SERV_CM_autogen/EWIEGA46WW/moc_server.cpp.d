@@ -1,5 +1,6 @@
 D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit-Debug/GOL_SERV_CM_autogen/EWIEGA46WW/moc_server.cpp: D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/server.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/QObject \
+  D:/Qt/6.0.4/msvc2019_64/include/QtCore/QString \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qalgorithms.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qanystringview.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtCore/qarraydata.h \
@@ -80,4 +81,6 @@ D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit
   D:/Qt/6.0.4/msvc2019_64/include/QtNetwork/qtcpserver.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtNetwork/qtcpsocket.h \
   D:/Qt/6.0.4/msvc2019_64/include/QtNetwork/qtnetwork-config.h \
-  D:/Qt/6.0.4/msvc2019_64/include/QtNetwork/qtnetworkglobal.h
+  D:/Qt/6.0.4/msvc2019_64/include/QtNetwork/qtnetworkglobal.h \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iserver.h \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iserver_signal.h

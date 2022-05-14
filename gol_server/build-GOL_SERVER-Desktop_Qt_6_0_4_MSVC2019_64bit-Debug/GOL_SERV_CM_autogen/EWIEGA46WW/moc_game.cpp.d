@@ -92,5 +92,7 @@ D:/QtProjects/GOL_CM/gol_server/build-GOL_SERVER-Desktop_Qt_6_0_4_MSVC2019_64bit
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iencoder.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/ifield.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/irules.h \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iserver.h \
+  D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/iserver_signal.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/rules.h \
   D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/server.h

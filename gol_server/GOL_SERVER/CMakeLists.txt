@@ -15,10 +15,12 @@ include_directories(tests)
 
 include(FetchContent)
 FetchContent_Declare(
-        googletest
-        URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+    googletest
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG        main
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+set(gmock_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Network)
@@ -26,7 +28,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Network)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets)
 
 add_executable(GOL_SERV_CM
-  #main.cpp
+  main.cpp
   ifield.h
   field.h
   field.cpp
@@ -39,10 +41,14 @@ add_executable(GOL_SERV_CM
   irules.h
   rules.h
   rules.cpp
+  iserver.h
+  iserver_signal.h
   server.h
   server.cpp
   game.h
   game.cpp
+  tests/mockserver.h
+  tests/mockencoder.h
   tests/field_test.h
   tests/field_test.cpp
   tests/encoder_test.h
@@ -57,4 +63,4 @@ add_executable(GOL_SERV_CM
   tests/game_test.cpp
 )
 
-target_link_libraries(GOL_SERV_CM Qt${QT_VERSION_MAJOR}::Core Qt6::Network gtest gtest_main)
+target_link_libraries(GOL_SERV_CM Qt${QT_VERSION_MAJOR}::Core Qt6::Network gtest gtest_main gmock)

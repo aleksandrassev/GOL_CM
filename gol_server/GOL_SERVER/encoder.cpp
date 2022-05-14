@@ -1,8 +1,14 @@
 #include "encoder.h"
+#include <QDebug>
 
 
-QString Encoder::encode(const Field* field)
+QString Encoder::encode(const IField* field)
 {
+    if (field == nullptr)
+    {
+      qCritical("missing field pointer - Encoder");
+      return "";
+    }
     QString fieldAsString;
 
     int row_size = field->getRowSize();
@@ -21,7 +27,7 @@ QString Encoder::encode(const Field* field)
 
 Field Encoder::decode(const QString& fieldAsString)
 {
-    std::vector<std::vector<bool>> field;
+    std::vector<std::vector<bool>> vectorField;
     std::vector<bool> fieldLine;
 
     for (auto &i : fieldAsString)
@@ -32,9 +38,9 @@ Field Encoder::decode(const QString& fieldAsString)
         }
         else
         {
-            field.push_back(fieldLine);
+            vectorField.push_back(fieldLine);
             fieldLine.clear();
         }
     }
-    return field;
+    return vectorField;
 }

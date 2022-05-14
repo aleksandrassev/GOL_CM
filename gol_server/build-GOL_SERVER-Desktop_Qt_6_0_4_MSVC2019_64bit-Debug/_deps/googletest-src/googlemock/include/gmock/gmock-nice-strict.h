@@ -27,7 +27,6 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-
 // Implements class templates NiceMock, NaggyMock, and StrictMock.
 //
 // Given a mock class MockFoo that is created using Google Mock,
@@ -58,10 +57,11 @@
 // In particular, nesting NiceMock, NaggyMock, and StrictMock is NOT
 // supported.
 
-// GOOGLETEST_CM0002 DO NOT DELETE
+// IWYU pragma: private, include "gmock/gmock.h"
+// IWYU pragma: friend gmock/.*
 
-#ifndef GMOCK_INCLUDE_GMOCK_GMOCK_NICE_STRICT_H_
-#define GMOCK_INCLUDE_GMOCK_GMOCK_NICE_STRICT_H_
+#ifndef GOOGLEMOCK_INCLUDE_GMOCK_GMOCK_NICE_STRICT_H_
+#define GOOGLEMOCK_INCLUDE_GMOCK_GMOCK_NICE_STRICT_H_
 
 #include <type_traits>
 
@@ -137,12 +137,11 @@ class GTEST_INTERNAL_EMPTY_BASE_CLASS NiceMock
     : private internal::NiceMockImpl<MockClass>,
       public MockClass {
  public:
-  static_assert(
-      !internal::HasStrictnessModifier<MockClass>(),
-      "Can't apply NiceMock to a class hierarchy that already has a "
-      "strictness modifier. See "
-      "https://github.com/google/googletest/blob/master/googlemock/docs/"
-      "cook_book.md#the-nice-the-strict-and-the-naggy-nicestrictnaggy");
+  static_assert(!internal::HasStrictnessModifier<MockClass>(),
+                "Can't apply NiceMock to a class hierarchy that already has a "
+                "strictness modifier. See "
+                "https://google.github.io/googletest/"
+                "gmock_cook_book.html#NiceStrictNaggy");
   NiceMock() : MockClass() {
     static_assert(sizeof(*this) == sizeof(MockClass),
                   "The impl subclass shouldn't introduce any padding");
@@ -170,19 +169,19 @@ class GTEST_INTERNAL_EMPTY_BASE_CLASS NiceMock
   }
 
  private:
-  GTEST_DISALLOW_COPY_AND_ASSIGN_(NiceMock);
+  NiceMock(const NiceMock&) = delete;
+  NiceMock& operator=(const NiceMock&) = delete;
 };
 
 template <class MockClass>
 class GTEST_INTERNAL_EMPTY_BASE_CLASS NaggyMock
     : private internal::NaggyMockImpl<MockClass>,
       public MockClass {
-  static_assert(
-      !internal::HasStrictnessModifier<MockClass>(),
-      "Can't apply NaggyMock to a class hierarchy that already has a "
-      "strictness modifier. See "
-      "https://github.com/google/googletest/blob/master/googlemock/docs/"
-      "cook_book.md#the-nice-the-strict-and-the-naggy-nicestrictnaggy");
+  static_assert(!internal::HasStrictnessModifier<MockClass>(),
+                "Can't apply NaggyMock to a class hierarchy that already has a "
+                "strictness modifier. See "
+                "https://google.github.io/googletest/"
+                "gmock_cook_book.html#NiceStrictNaggy");
 
  public:
   NaggyMock() : MockClass() {
@@ -212,7 +211,8 @@ class GTEST_INTERNAL_EMPTY_BASE_CLASS NaggyMock
   }
 
  private:
-  GTEST_DISALLOW_COPY_AND_ASSIGN_(NaggyMock);
+  NaggyMock(const NaggyMock&) = delete;
+  NaggyMock& operator=(const NaggyMock&) = delete;
 };
 
 template <class MockClass>
@@ -224,8 +224,8 @@ class GTEST_INTERNAL_EMPTY_BASE_CLASS StrictMock
       !internal::HasStrictnessModifier<MockClass>(),
       "Can't apply StrictMock to a class hierarchy that already has a "
       "strictness modifier. See "
-      "https://github.com/google/googletest/blob/master/googlemock/docs/"
-      "cook_book.md#the-nice-the-strict-and-the-naggy-nicestrictnaggy");
+      "https://google.github.io/googletest/"
+      "gmock_cook_book.html#NiceStrictNaggy");
   StrictMock() : MockClass() {
     static_assert(sizeof(*this) == sizeof(MockClass),
                   "The impl subclass shouldn't introduce any padding");
@@ -253,11 +253,12 @@ class GTEST_INTERNAL_EMPTY_BASE_CLASS StrictMock
   }
 
  private:
-  GTEST_DISALLOW_COPY_AND_ASSIGN_(StrictMock);
+  StrictMock(const StrictMock&) = delete;
+  StrictMock& operator=(const StrictMock&) = delete;
 };
 
 #undef GTEST_INTERNAL_EMPTY_BASE_CLASS
 
 }  // namespace testing
 
-#endif  // GMOCK_INCLUDE_GMOCK_GMOCK_NICE_STRICT_H_
+#endif  // GOOGLEMOCK_INCLUDE_GMOCK_GMOCK_NICE_STRICT_H_

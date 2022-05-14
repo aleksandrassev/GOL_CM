@@ -8,7 +8,7 @@
 class ICycle
 {
 public:
-    virtual QString nextGeneration(Field* field) = 0;
+    virtual QString nextGeneration() = 0;
 
 protected:
     virtual ~ICycle() = default;

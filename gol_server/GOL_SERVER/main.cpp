@@ -1,6 +1,9 @@
 #include <QCoreApplication>
 #include "gtest/gtest.h"
 
+#include "game.h"
+#include "server.h"
+
 int main(int argc, char **argv)
 {
   ::testing::InitGoogleTest(&argc, argv);
@@ -11,7 +14,11 @@ int main(int argc, char **argv)
 //int main(int argc, char *argv[])
 //{
 //    QCoreApplication a(argc, argv);
-//
+
+//    Server server;
+
+//    Game game(nullptr, &server);
+
 //    return a.exec();
 //}
 

@@ -1,57 +1,79 @@
 #include "game.h"
 
 
-Game::Game(QObject *parent)
+Game::Game(QObject *parent, IServer* server)
     : QObject{parent}
+    , m_timer{nullptr}
+    , m_cycle{nullptr}
+    , m_server{server}
+    , m_encoder{nullptr}
+    , m_rules{nullptr}
+    , m_field{nullptr}
+    , m_cycleInterval{300}
+    , m_counter{0}
 {
     m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &Game::run);
     m_timer->setInterval(m_cycleInterval);
 
-    m_server = new Server(this);
-    connect(m_server->getServer(), &QTcpServer::newConnection, this, &Game::start);
+    m_server->registerSignal(this);
 
     m_encoder = new Encoder();
     m_rules = new Rules();
-    m_field = nullptr;
+    m_field = new Field();
+    m_nextField = new Field();
+    m_cycle = new Cycle(m_encoder, m_rules, m_field, m_nextField);
 }
 
 Game::~Game()
 {
-    delete m_rules;
-    delete m_encoder;
+    delete m_cycle;
+    m_cycle = nullptr;
+
     delete m_field;
+    m_field = nullptr;
+
+    delete m_nextField;
+    m_nextField = nullptr;
+
+    delete m_rules;
+    m_rules = nullptr;
+
+    delete m_encoder;
+    m_encoder = nullptr;
+
     delete m_timer;
-    delete m_server;
+    m_timer = nullptr;
 }
 
-void Game::start()
+void Game::onNewConnection()
 {
     qDebug() << "Draw input and press Start...";
-
-    //connect(m_server->getSocket(), &QTcpSocket::readyRead, this, &Game::initialize);
 }
 
-void Game::initialize()
+void Game::onReadyRead()
 {
+    qDebug()<<"Game::onReadyRead starts";
     QString input = m_server->readData();
+
+    *m_field = m_encoder->decode(input);
 
     if (input == "RestartServer")
     {
         restart();
         return;
     }
-    m_cycle = new Cycle(m_encoder, m_rules);
-    m_field = new Field(m_encoder->decode(input));
+
     m_timer->start();
 }
 
 void Game::run()
 {
-    m_cycle->nextGeneration(m_field);
+    qDebug()<<"Game::run starts";
+    m_cycle->nextGeneration();
     delete m_cycle;
 
-    m_cycle = new Cycle(m_encoder, m_rules);;
+    m_cycle = new Cycle(m_encoder, m_rules, m_field, m_nextField);;
     QString encodedField = m_encoder->encode(m_field);
 
     m_counter++;
