@@ -53,10 +53,10 @@ void Game::onNewConnection()
 
 void Game::onReadyRead()
 {
-    qDebug()<<"Game::onReadyRead starts";
     QString input = m_server->readData();
 
     *m_field = m_encoder->decode(input);
+    *m_nextField = m_encoder->decode(input);
 
     if (input == "RestartServer")
     {
@@ -69,12 +69,12 @@ void Game::onReadyRead()
 
 void Game::run()
 {
-    qDebug()<<"Game::run starts";
     m_cycle->nextGeneration();
     delete m_cycle;
 
     m_cycle = new Cycle(m_encoder, m_rules, m_field, m_nextField);;
-    QString encodedField = m_encoder->encode(m_field);
+    QString encodedField = m_encoder->encode(m_nextField);
+    *m_field = *m_nextField;
 
     m_counter++;
     qDebug() << "Game counter in server: " + QString::number(m_counter);

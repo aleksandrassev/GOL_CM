@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.1, 2022-05-13T23:25:05. -->
+<!-- Written by QtCreator 7.0.1, 2022-05-14T23:40:56. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -69,7 +69,8 @@
    </valuemap>
    <valuemap type="QVariantMap" key="AutoTest.CheckStates">
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:Cycle_test">Checked</value>
-    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:next_generation2">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:apply_rule">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:next_generation">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:Encoder_test">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:decode">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:encode">Checked</value>

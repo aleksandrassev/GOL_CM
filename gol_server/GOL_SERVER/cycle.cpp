@@ -20,6 +20,7 @@ Cycle::~Cycle()
 
 QString Cycle::nextGeneration()
 {
+qDebug()<<"Entering cycle:nextGen";
 
     for (int i = 0; i < m_field->getRowSize(); i++)
     {
@@ -40,22 +41,18 @@ void Cycle::applyRule(int cellPosX, int cellPosY, IField* field, IField* nextFie
     if (m_rules->executeFirstRule(m_field->getCellStatus(cellPosX, cellPosY), alive_neib))
     {
         m_nextField->setCellStatus(cellPosX, cellPosY, false);
-        qDebug()<<"FirstRuleApplied!";
     }
     else if (m_rules->executeSecondRule(m_field->getCellStatus(cellPosX, cellPosY), alive_neib))
     {
         m_nextField->setCellStatus(cellPosX, cellPosY, false);
-        qDebug()<<"2RuleApplied!";
     }
     else if (m_rules->executeThirdRule(m_field->getCellStatus(cellPosX, cellPosY), alive_neib))
     {
         m_nextField->setCellStatus(cellPosX, cellPosY, true);
-        qDebug()<<"3RuleApplied!";
     }
     else if (m_rules->executeFourthRule(m_field->getCellStatus(cellPosX, cellPosY), alive_neib))
     {
         m_nextField->setCellStatus(cellPosX, cellPosY, true);
-        qDebug()<<"4RuleApplied!";
     }
 }
 
