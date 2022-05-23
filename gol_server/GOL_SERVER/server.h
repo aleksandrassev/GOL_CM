@@ -20,9 +20,9 @@ public:
     QByteArray readData() override;
     void registerSignal(IServerSignal* callback) override;
     void writeData(QString buffer) override;
+    void startListening() override;
 
 private slots:
-    void onStart();
     void onReadyRead();
     void onNewConnection();
     void onDisconnected();

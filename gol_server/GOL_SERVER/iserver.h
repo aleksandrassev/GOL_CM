@@ -10,6 +10,7 @@ public:
     virtual void writeData(QString buffer) = 0;
     virtual QByteArray readData() = 0;
     virtual void registerSignal(IServerSignal* callback) = 0;
+    virtual void startListening() = 0;
 
     virtual ~IServer() = default;
 };

@@ -12,17 +12,26 @@ Game::Game(QObject *parent, IServer* server)
     , m_cycleInterval{300}
     , m_counter{0}
 {
+    if (m_server == nullptr)
+    {
+      qCritical("missing pointer in Game::Game()");
+      return;
+    }
+
     m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &Game::run);
     m_timer->setInterval(m_cycleInterval);
 
     m_server->registerSignal(this);
+    m_server->startListening();
 
     m_encoder = new Encoder();
     m_rules = new Rules();
     m_field = new Field();
     m_nextField = new Field();
     m_cycle = new Cycle(m_encoder, m_rules, m_field, m_nextField);
+
+    m_isConnected = false;
 }
 
 Game::~Game()
@@ -48,12 +57,23 @@ Game::~Game()
 
 void Game::onNewConnection()
 {
-    qDebug() << "Draw input and press Start...";
+    m_isConnected = true;
 }
 
 void Game::onReadyRead()
 {
-    QString input = m_server->readData();
+    QString input;
+    onReadyReadImpl(input);
+}
+
+int Game::onReadyReadImpl(QString &input)
+{
+    if (m_server == nullptr || m_field == nullptr || m_nextField == nullptr || m_encoder == nullptr)
+    {
+      qCritical("missing pointer in Game::onReadyRead()");
+      return 0;
+    }
+    input = m_server->readData();
 
     *m_field = m_encoder->decode(input);
     *m_nextField = m_encoder->decode(input);
@@ -61,20 +81,21 @@ void Game::onReadyRead()
     if (input == "RestartServer")
     {
         restart();
-        return;
+        return 1;
     }
-
     m_timer->start();
+    return 2;
 }
 
 void Game::run()
 {
-    m_cycle->nextGeneration();
-    delete m_cycle;
+   QString encodedField = m_cycle->nextGeneration();
 
-    m_cycle = new Cycle(m_encoder, m_rules, m_field, m_nextField);;
-    QString encodedField = m_encoder->encode(m_nextField);
+    delete m_cycle;
+    m_cycle = nullptr;
+
     *m_field = *m_nextField;
+    m_cycle = new Cycle(m_encoder, m_rules, m_field, m_nextField);;
 
     m_counter++;
     qDebug() << "Game counter in server: " + QString::number(m_counter);
@@ -89,4 +110,10 @@ void Game::restart()
     m_counter = 0;
     m_timer->stop();
     delete m_cycle;
+    m_cycle = nullptr;
+}
+
+bool Game::getConStatus()
+{
+    return m_isConnected;
 }

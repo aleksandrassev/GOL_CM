@@ -6,17 +6,17 @@ Server::Server(QObject *parent)
 {
     m_server = new QTcpServer();
     connect(m_server, &QTcpServer::newConnection, this, &Server::onNewConnection);
-    onStart();
 }
 
 Server::~Server()
 {
-    m_callback = nullptr; // ?????
+    m_callback = nullptr;
     m_server -> close();
     delete m_server;
+    m_server = nullptr;
 }
 
-void Server::onStart()
+void Server::startListening()
 {
     if(!m_server->listen(QHostAddress::LocalHost, 12345))
     {

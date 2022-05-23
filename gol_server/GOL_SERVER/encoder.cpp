@@ -6,9 +6,10 @@ QString Encoder::encode(const IField* field)
 {
     if (field == nullptr)
     {
-      qCritical("missing field pointer - Encoder");
+      qCritical("missing field pointer Encoder::encode");
       return "";
     }
+
     QString fieldAsString;
 
     int row_size = field->getRowSize();

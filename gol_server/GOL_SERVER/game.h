@@ -15,12 +15,15 @@ class Game : public QObject, public IServerSignal
 public:
     explicit Game(QObject *parent = nullptr, IServer* server = nullptr);
     ~Game();
-
+    int onReadyReadImpl(QString &input);
+    bool onNewConnectionImpl();
     void run();
     void restart();
-    void onNewConnection() override;
-    void onReadyRead() override;
+    bool getConStatus();
 
+protected:
+    void onReadyRead() override;
+    void onNewConnection() override;
 private:
     QTimer *m_timer;
     Cycle *m_cycle;
@@ -29,9 +32,9 @@ private:
     Rules* m_rules;
     Field* m_field;
     Field* m_nextField;
-
     int m_cycleInterval;
     int m_counter;
+    bool m_isConnected;
 };
 
 #endif // GAME_H
