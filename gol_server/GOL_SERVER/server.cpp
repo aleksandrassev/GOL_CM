@@ -56,6 +56,10 @@ void Server::writeData(QString buffer)
 
 void Server::onDisconnected()
 {
+    if (m_callback != nullptr)
+    {
+        m_callback->onDisconnected();
+    }
     qDebug()<<"Disconnected...";
 }
 

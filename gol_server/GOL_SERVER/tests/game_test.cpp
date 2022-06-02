@@ -34,6 +34,32 @@ TEST_F(Game_test, onNewConnect)
     EXPECT_TRUE(game.getConStatus());
 }
 
+TEST_F(Game_test, onDisconnected)
+{
+    testing::NiceMock<MockServer> mockServer;
+    ON_CALL(mockServer, registerSignal(_)).WillByDefault(testing::Return());
+
+    class GameTester: public Game
+    {
+    public:
+        GameTester (QObject *parent, IServer* server) : Game (parent, server) {}
+        void onNewConnection() override
+        {
+            Game::onNewConnection();
+        }
+        void onDisconnected() override
+        {
+            Game::onDisconnected();
+        }
+    };
+
+    GameTester game(nullptr, &mockServer);
+    game.onNewConnection();
+    game.onDisconnected();
+
+    EXPECT_FALSE(game.getConStatus());
+}
+
 TEST_F(Game_test, onReadyReadImpl_nullptr)
 {
     testing::NiceMock<MockServer> mockServer;

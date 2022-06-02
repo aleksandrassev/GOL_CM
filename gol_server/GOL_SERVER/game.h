@@ -24,6 +24,7 @@ public:
 protected:
     void onReadyRead() override;
     void onNewConnection() override;
+    void onDisconnected() override;
 private:
     QTimer *m_timer;
     Cycle *m_cycle;

@@ -60,6 +60,11 @@ void Game::onNewConnection()
     m_isConnected = true;
 }
 
+void Game::onDisconnected()
+{
+    m_isConnected = false;
+}
+
 void Game::onReadyRead()
 {
     QString input;
