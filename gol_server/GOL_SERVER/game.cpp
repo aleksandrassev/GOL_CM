@@ -4,7 +4,7 @@
 Game::Game(QObject *parent, IServer* server)
     : QObject{parent}
     , m_timer{nullptr}
-    , m_cycle{nullptr}
+    , m_glogic{nullptr}
     , m_server{server}
     , m_encoder{nullptr}
     , m_rules{nullptr}
@@ -29,15 +29,15 @@ Game::Game(QObject *parent, IServer* server)
     m_rules = new Rules();
     m_field = new Field();
     m_nextField = new Field();
-    m_cycle = new Cycle(m_encoder, m_rules, m_field, m_nextField);
+    m_glogic = new GameLogic(m_encoder, m_rules, m_field, m_nextField);
 
     m_isConnected = false;
 }
 
 Game::~Game()
 {
-    delete m_cycle;
-    m_cycle = nullptr;
+    delete m_glogic;
+    m_glogic = nullptr;
 
     delete m_field;
     m_field = nullptr;
@@ -99,13 +99,13 @@ void Game::onTimeout()
 
 void Game::run()
 {
-   QString encodedField = m_cycle->nextGeneration();
+   QString encodedField = m_glogic->nextGeneration();
 
-    delete m_cycle;
-    m_cycle = nullptr;
+    delete m_glogic;
+    m_glogic = nullptr;
 
     *m_field = *m_nextField;
-    m_cycle = new Cycle(m_encoder, m_rules, m_field, m_nextField);;
+    m_glogic = new GameLogic(m_encoder, m_rules, m_field, m_nextField);;
 
     m_counter++;
     qDebug() << "Game counter in server: " + QString::number(m_counter);
@@ -119,8 +119,8 @@ void Game::restart()
 
     m_counter = 0;
     m_timer->stop();
-    delete m_cycle;
-    m_cycle = nullptr;
+    delete m_glogic;
+    m_glogic = nullptr;
 }
 
 bool Game::getConStatus()

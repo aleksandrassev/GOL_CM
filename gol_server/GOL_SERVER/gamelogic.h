@@ -1,20 +1,21 @@
 #ifndef CYCLE_H
 #define CYCLE_H
 
-#include "icycle.h"
+#include "igamelogic.h"
 #include "ifield.h"
 #include "iencoder.h"
 #include "irules.h"
 
 
-class Cycle : public ICycle
+class GameLogic : public IGameLogic
 {
 public:
-  Cycle(IEncoder* encoder, IRules* rules, IField* field, IField* nextField);
-  ~Cycle() override;
+  GameLogic(IEncoder* encoder, IRules* rules, IField* field, IField* nextField);
+  ~GameLogic() override;
 
   QString nextGeneration() override;
   void applyRule(int cellPosX, int cellPosY, IField* field, IField* nextField);
+  int findNeighbours(int positionX, int positionY, IField* field) const override;
 
 private:
   IEncoder* m_encoder;

@@ -2,7 +2,7 @@
 #define GAME_H
 
 #include <QTimer>
-#include "cycle.h"
+#include "gamelogic.h"
 #include "encoder.h"
 #include "rules.h"
 #include "server.h"
@@ -30,7 +30,7 @@ protected:
 
 private:
     MyTimer *m_timer;
-    Cycle *m_cycle;
+    GameLogic *m_glogic;
     IServer *m_server;
     Encoder* m_encoder;
     Rules* m_rules;

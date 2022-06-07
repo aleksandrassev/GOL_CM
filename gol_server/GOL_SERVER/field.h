@@ -13,7 +13,6 @@ public:
 
     bool getCellStatus(int positionX, int positionY) const override;
     void setCellStatus(int positionX, int positionY, bool status) override;
-    int findNeighbours(int positionX, int positionY) const override;
     int getRowSize() const override;
     int getColSize() const override;
 

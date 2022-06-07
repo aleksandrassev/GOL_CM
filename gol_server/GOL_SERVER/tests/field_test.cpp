@@ -49,29 +49,4 @@ TEST_F(Field_test, set_cell_status)
     EXPECT_EQ(field.getCellStatus(5, 5), false);
 }
 
-TEST_F(Field_test, find_neighbours)
-{
-    std::vector<std::vector<bool>> vector(10, std::vector<bool>(10));
-    Field field(vector);
 
-    field.setCellStatus(5, 5, true);
-
-    EXPECT_TRUE(field.findNeighbours(5, 5) == 0);
-
-    field.setCellStatus(4, 5, true);
-    field.setCellStatus(6, 5, true);
-
-    EXPECT_FALSE(field.findNeighbours(5, 5) == 0);
-    EXPECT_FALSE(field.findNeighbours(5, 5) == 1);
-    EXPECT_TRUE(field.findNeighbours(5, 5) == 2);
-
-    field.setCellStatus(4, 4, true);
-    field.setCellStatus(6, 6, true);
-
-    EXPECT_TRUE(field.findNeighbours(5, 5) == 4);
-
-    field.setCellStatus(1, 1, true);
-
-    EXPECT_TRUE(field.findNeighbours(5, 5) == 4);
-    EXPECT_TRUE(field.findNeighbours(0, 1) == 1);
-}

@@ -4,7 +4,7 @@
 #include "game.h"
 #include "server.h"
 
-#define RUN_TEST 0
+#define RUN_TEST 1
 
 #if RUN_TEST == 1
 int main(int argc, char **argv)

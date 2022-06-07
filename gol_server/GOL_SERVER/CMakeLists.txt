@@ -35,9 +35,9 @@ add_executable(GOL_SERV_CM
   iencoder.h
   encoder.h
   encoder.cpp
-  icycle.h
-  cycle.h
-  cycle.cpp
+  igamelogic.h
+  gamelogic.h
+  gamelogic.cpp
   irules.h
   rules.h
   rules.cpp
@@ -55,8 +55,8 @@ add_executable(GOL_SERV_CM
   tests/field_test.cpp
   tests/encoder_test.h
   tests/encoder_test.cpp
-  tests/cycle_test.h
-  tests/cycle_test.cpp
+  tests/gamelogic_test.h
+  tests/gamelogic_test.cpp
   tests/rules_test.h
   tests/rules_test.cpp
   tests/server_test.h
