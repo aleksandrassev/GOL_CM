@@ -6,10 +6,11 @@
 #include "encoder.h"
 #include "rules.h"
 #include "server.h"
-#include "iserver_signal.h"
+#include "isignalhandler.h"
+#include "mytimer.h"
 
 
-class Game : public QObject, public IServerSignal
+class Game : public QObject, public ISignalHandler
 {
     Q_OBJECT
 public:
@@ -25,8 +26,10 @@ protected:
     void onReadyRead() override;
     void onNewConnection() override;
     void onDisconnected() override;
+    void onTimeout() override;
+
 private:
-    QTimer *m_timer;
+    MyTimer *m_timer;
     Cycle *m_cycle;
     IServer *m_server;
     Encoder* m_encoder;

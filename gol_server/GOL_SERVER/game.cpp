@@ -18,8 +18,8 @@ Game::Game(QObject *parent, IServer* server)
       return;
     }
 
-    m_timer = new QTimer(this);
-    connect(m_timer, &QTimer::timeout, this, &Game::run);
+    m_timer = new MyTimer();
+    m_timer->registerTimerSignal(this);
     m_timer->setInterval(m_cycleInterval);
 
     m_server->registerSignal(this);
@@ -90,6 +90,11 @@ int Game::onReadyReadImpl(QString &input)
     }
     m_timer->start();
     return 2;
+}
+
+void Game::onTimeout()
+{
+    run();
 }
 
 void Game::run()

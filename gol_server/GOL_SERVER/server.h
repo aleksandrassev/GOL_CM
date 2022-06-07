@@ -6,7 +6,7 @@
 #include <QTcpSocket>
 
 #include <iserver.h>
-#include <iserver_signal.h>
+#include <isignalhandler.h>
 
 class Server : public QObject, public IServer
 {
@@ -18,7 +18,7 @@ public:
     QTcpSocket* getSocket();
     QTcpServer* getServer();
     QByteArray readData() override;
-    void registerSignal(IServerSignal* callback) override;
+    void registerSignal(ISignalHandler* callback) override;
     void writeData(QString buffer) override;
     void startListening() override;
 
@@ -30,7 +30,7 @@ private slots:
 private:
     QTcpServer* m_server;
     QTcpSocket* m_socket;
-    IServerSignal* m_callback;
+    ISignalHandler* m_callback;
 
 
 };

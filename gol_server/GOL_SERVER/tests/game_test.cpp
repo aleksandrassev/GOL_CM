@@ -33,6 +33,18 @@ TEST_F(Game_test, onNewConnect)
 
     EXPECT_TRUE(game.getConStatus());
 }
+#include "mytimer.h"
+TEST_F(Game_test, onTimeout)
+{
+    testing::NiceMock<MockServer> mockServer;
+    ON_CALL(mockServer, registerSignal(_)).WillByDefault(testing::Return());
+
+    //Game game(nullptr, &mockServer);
+    MyTimer timer;
+    timer.setInterval(300);
+    timer.start();
+
+}
 
 TEST_F(Game_test, onDisconnected)
 {
@@ -58,6 +70,27 @@ TEST_F(Game_test, onDisconnected)
     game.onDisconnected();
 
     EXPECT_FALSE(game.getConStatus());
+}
+
+TEST_F(Game_test, onNewConnection)
+{
+    testing::NiceMock<MockServer> mockServer;
+    ON_CALL(mockServer, registerSignal(_)).WillByDefault(testing::Return());
+
+    class GameTester: public Game
+    {
+    public:
+        GameTester (QObject *parent, IServer* server) : Game (parent, server) {}
+        void onNewConnection() override
+        {
+            Game::onNewConnection();
+        }
+
+    };
+    GameTester game(nullptr, &mockServer);
+    game.onNewConnection();
+
+    EXPECT_TRUE(game.getConStatus());
 }
 
 TEST_F(Game_test, onReadyReadImpl_nullptr)

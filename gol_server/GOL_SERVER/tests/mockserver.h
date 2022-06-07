@@ -12,7 +12,7 @@ class MockServer: public IServer
 public:
     MOCK_METHOD(void, writeData, (QString buffer), (override));
     MOCK_METHOD(QByteArray, readData, (), (override));
-    MOCK_METHOD(void, registerSignal, (IServerSignal* callback), (override));
+    MOCK_METHOD(void, registerSignal, (ISignalHandler* callback), (override));
     MOCK_METHOD(void, startListening, (), (override));
 
 };

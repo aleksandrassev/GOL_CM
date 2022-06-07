@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.1, 2022-05-24T02:06:57. -->
+<!-- Written by QtCreator 7.0.1, 2022-06-02T23:50:18. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -82,9 +82,12 @@
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:get_rows">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:set_cell_status">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:Game_test">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:onDisconnected">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:onNewConnect">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:onNewConnection">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:onReadyReadImpl_nullptr">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:onReadyReadImpl_restart">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:onTimeout">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:run">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:start">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp:First_rule">Checked</value>

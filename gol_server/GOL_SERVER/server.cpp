@@ -73,7 +73,7 @@ QTcpServer* Server::getServer()
     return m_server;
 }
 
-void Server::registerSignal(IServerSignal* callback)
+void Server::registerSignal(ISignalHandler* callback)
 {
     m_callback = callback;
 }

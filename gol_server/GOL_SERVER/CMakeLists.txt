@@ -42,11 +42,13 @@ add_executable(GOL_SERV_CM
   rules.h
   rules.cpp
   iserver.h
-  iserver_signal.h
+  isignalhandler.h
   server.h
   server.cpp
   game.h
   game.cpp
+  mytimer.h
+  mytimer.cpp
   tests/mockserver.h
   tests/mockencoder.h
   tests/field_test.h
