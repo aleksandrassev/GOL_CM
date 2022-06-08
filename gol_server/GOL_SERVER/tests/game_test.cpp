@@ -96,13 +96,13 @@ TEST_F(Game_test, onNewConnection)
 TEST_F(Game_test, onReadyReadImpl_nullptr)
 {
     testing::NiceMock<MockServer> mockServer;
-    QString test = "2";
+    QString test = "265";
 
     Game game(nullptr, &mockServer);
 
     int status = game.onReadyReadImpl(test);
 
-    EXPECT_EQ(status, 2);
+    EXPECT_EQ(status, 1);
 }
 
 TEST_F(Game_test, onReadyReadImpl_restart)
@@ -110,15 +110,15 @@ TEST_F(Game_test, onReadyReadImpl_restart)
     testing::NiceMock<MockServer> mockServer;
     Game game(nullptr, &mockServer);
 
-    QString test = "2";
-    QString restart = "RestartServer";
-    ON_CALL(mockServer, readData()).WillByDefault(testing::Return("2"));
+    QString test = "5\n";
+    QString restart = "2\n";
+    ON_CALL(mockServer, readData()).WillByDefault(testing::Return("5\n"));
     int tstatus = game.onReadyReadImpl(test);
-    ON_CALL(mockServer, readData()).WillByDefault(testing::Return("RestartServer"));
+    ON_CALL(mockServer, readData()).WillByDefault(testing::Return("2\n"));
     int rstatus = game.onReadyReadImpl(restart);
 
-    EXPECT_EQ(rstatus, 1);
-    EXPECT_EQ(tstatus, 2);
+    EXPECT_EQ(rstatus, 2);
+    EXPECT_EQ(tstatus, 1);
     EXPECT_NE(rstatus, 0);
     EXPECT_NE(tstatus, 0);
 }

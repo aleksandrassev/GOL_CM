@@ -81,16 +81,16 @@ int Game::onReadyReadImpl(QString &input)
     }
     input = m_server->readData();
 
-    if (input == "3\n")
+    if (input == "2\n")
     {
         restart();
-        return 1;
+        return 2;
     }
     *m_field = m_encoder->decode(input);
     *m_nextField = m_encoder->decode(input);
 
     m_timer->start();
-    return 2;
+    return 1;
 }
 
 void Game::onTimeout()

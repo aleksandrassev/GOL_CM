@@ -38,7 +38,6 @@ TEST_F(Field_test, set_cell_status)
 
     field.setCellStatus(8, 7, true);
 
-    EXPECT_NE(field.getCellStatus(8, 7), false);
     EXPECT_EQ(field.getCellStatus(8, 7), true);
     EXPECT_EQ(field.getCellStatus(5, 5), false);
 }
