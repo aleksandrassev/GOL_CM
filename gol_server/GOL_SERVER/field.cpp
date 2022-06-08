@@ -1,8 +1,8 @@
 #include "field.h"
 
-Field::Field(std::vector<std::vector<bool>>& vector)
+Field::Field(int rows, int cols)
 {
-    m_vector = vector;
+    m_vector.resize(rows, std::vector<bool>(cols, false));
 }
 
 bool Field::getCellStatus(int row, int col) const

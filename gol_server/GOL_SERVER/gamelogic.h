@@ -22,8 +22,6 @@ private:
   IRules* m_rules;
   IField* m_field;
   IField* m_nextField;
-
-
 };
 
 #endif // CYCLE_H

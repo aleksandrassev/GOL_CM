@@ -3,9 +3,8 @@
 
 TEST_F(Encoder_test, encode)
 {
-    std::vector<std::vector<bool>> vector(3, std::vector<bool>(5));
-    Field field(vector);
-    Field field2(vector);
+    Field field(3, 5);
+    Field field2(3, 5);
     field2.setCellStatus(2,1, true);
     field2.setCellStatus(1,4, true);
 
@@ -35,4 +34,20 @@ TEST_F(Encoder_test, decode)
     ASSERT_NE(field.getCellStatus(1,1), true);
     ASSERT_NE(field2.getColSize(), 8);
     ASSERT_NE(field2.getCellStatus(1,4), false);
+}
+
+TEST_F(Encoder_test, calculateFieldSize)
+{
+    QString fstr = "00000\n00000\n00000\n";
+    QString fstr2 = "0000\n0001\n0100\n0000\n";
+
+    Encoder encoder;
+    auto size_fstr = encoder.calculateFieldSize(fstr);
+    auto size_fstr2 = encoder.calculateFieldSize(fstr2);
+
+    ASSERT_EQ(size_fstr.first, 3);
+    ASSERT_EQ(size_fstr.second, 5);
+    ASSERT_EQ(size_fstr2.first, 4);
+    ASSERT_EQ(size_fstr2.second, 4);
+    ASSERT_NE(size_fstr.first, 8);
 }

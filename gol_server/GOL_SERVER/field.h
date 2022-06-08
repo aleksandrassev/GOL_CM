@@ -8,7 +8,7 @@ class Field : public IField
 {
 public:
     Field() = default;
-    Field(std::vector<std::vector<bool>> &vector);
+    Field(int rows, int cols);
     ~Field() override = default;
 
     bool getCellStatus(int positionX, int positionY) const override;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.1, 2022-06-02T23:50:18. -->
+<!-- Written by QtCreator 7.0.1, 2022-06-08T01:07:24. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -68,15 +68,11 @@
     <value type="bool" key="AutoTest.Framework.QtTest">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="AutoTest.CheckStates">
-    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:Cycle_test">Checked</value>
-    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:apply_rule">Checked</value>
-    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/cycle_test.cpp:next_generation">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:Encoder_test">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:decode">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:encode">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:Field_test">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:constructor">Checked</value>
-    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:find_neighbours">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:get_cell_status">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:get_cols">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:get_rows">Checked</value>
@@ -90,6 +86,10 @@
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:onTimeout">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:run">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/game_test.cpp:start">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/gamelogic_test.cpp:GameLogic_test">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/gamelogic_test.cpp:apply_rule">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/gamelogic_test.cpp:find_neighbours">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/gamelogic_test.cpp:next_generation">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp:First_rule">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp:Fourth_rule">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/rules_test.cpp:Rules_test">Checked</value>

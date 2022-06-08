@@ -29,7 +29,6 @@ Game::Game(QObject *parent, IServer* server)
     m_rules = new Rules();
     m_field = new Field();
     m_nextField = new Field();
-    m_glogic = new GameLogic(m_encoder, m_rules, m_field, m_nextField);
 
     m_isConnected = false;
 }
@@ -67,27 +66,29 @@ void Game::onDisconnected()
 
 void Game::onReadyRead()
 {
-    QString input;
-    onReadyReadImpl(input);
+   QString input;
+   onReadyReadImpl(input);
 }
 
 int Game::onReadyReadImpl(QString &input)
 {
-    if (m_server == nullptr || m_field == nullptr || m_nextField == nullptr || m_encoder == nullptr)
+    m_glogic = new GameLogic(m_encoder, m_rules, m_field, m_nextField);
+
+    if (m_server == nullptr || m_field == nullptr || m_nextField == nullptr || m_encoder == nullptr || m_rules == nullptr)
     {
       qCritical("missing pointer in Game::onReadyRead()");
       return 0;
     }
     input = m_server->readData();
 
-    *m_field = m_encoder->decode(input);
-    *m_nextField = m_encoder->decode(input);
-
-    if (input == "RestartServer")
+    if (input == "3\n")
     {
         restart();
         return 1;
     }
+    *m_field = m_encoder->decode(input);
+    *m_nextField = m_encoder->decode(input);
+
     m_timer->start();
     return 2;
 }
@@ -101,7 +102,7 @@ void Game::run()
 {
    QString encodedField = m_glogic->nextGeneration();
 
-    delete m_glogic;
+   delete m_glogic;
     m_glogic = nullptr;
 
     *m_field = *m_nextField;
@@ -111,6 +112,13 @@ void Game::run()
     qDebug() << "Game counter in server: " + QString::number(m_counter);
 
     m_server->writeData(encodedField + "!" + QString::number(m_counter));
+
+    if (isFieldEmpty(encodedField))
+    {
+        qDebug()<<"Field became empty!";
+        restart();
+        return;
+    }
 }
 
 void Game::restart()
@@ -126,4 +134,13 @@ void Game::restart()
 bool Game::getConStatus()
 {
     return m_isConnected;
+}
+
+bool Game::isFieldEmpty(QString &FieldString) const
+{
+    if (FieldString.contains("1"))
+    {
+        return false;
+    }
+    return true;
 }

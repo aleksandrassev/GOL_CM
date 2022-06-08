@@ -28,20 +28,75 @@ QString Encoder::encode(const IField* field)
 
 Field Encoder::decode(const QString& fieldAsString)
 {
-    std::vector<std::vector<bool>> vectorField;
-    std::vector<bool> fieldLine;
+    auto fieldSize = calculateFieldSize(fieldAsString);
+    Field field (fieldSize.first, fieldSize.second);
 
+    if (fieldSize.first == 0 || fieldSize.second == 0)
+    {
+      qCritical("zero size field in Encoder::decode");
+      return field;
+    }
+    int row = 0;
+    int col = 0;
     for (auto &i : fieldAsString)
     {
         if (i != '\n')
         {
-            fieldLine.push_back(i.digitValue());
+            field.setCellStatus(row, col, i.digitValue());
+            col++;
         }
         else
         {
-            vectorField.push_back(fieldLine);
-            fieldLine.clear();
+            row++;
+            col = 0;
         }
     }
-    return vectorField;
+    return field;
 }
+
+std::pair<int, int> Encoder::calculateFieldSize(const QString& str)
+{
+    int row_nr = 0;
+    int col_nr = 0;
+    for (auto &i : str)
+    {
+        if (i != '\n')
+        {
+            col_nr++;
+        }
+        else
+        {
+            row_nr++;
+        }
+    }
+   if ((col_nr != 0) && (row_nr != 0))
+   {
+       col_nr = col_nr / row_nr;
+       return std::make_pair(row_nr, col_nr);
+   }
+   else
+   {
+       return std::make_pair(0, 0);
+   }
+}
+
+//Field Encoder::decode(const QString& fieldAsString)
+//{
+//    //std::vector<std::vector<bool>> vectorField;
+//    Field field;
+//    std::vector<bool> fieldLine;
+
+//    for (auto &i : fieldAsString)
+//    {
+//        if (i != '\n')
+//        {
+//            fieldLine.push_back(i.digitValue());
+//        }
+//        else
+//        {
+//            field.addLine(fieldLine);
+//            fieldLine.clear();
+//        }
+//    }
+//    return field;
+//}

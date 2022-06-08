@@ -66,7 +66,7 @@ void GameLogic::applyRule(int cellPosX, int cellPosY, IField* field, IField* nex
     }
 }
 
-int GameLogic::findNeighbours(int row, int col, IField *field) const
+int GameLogic::findNeighbours(int row, int col, IField* field) const
 {
     if (field == nullptr)
     {

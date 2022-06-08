@@ -39,6 +39,8 @@ private:
     int m_cycleInterval;
     int m_counter;
     bool m_isConnected;
+
+    bool isFieldEmpty(QString &FieldString) const;
 };
 
 #endif // GAME_H

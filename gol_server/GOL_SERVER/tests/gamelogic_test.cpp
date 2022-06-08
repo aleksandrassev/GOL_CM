@@ -6,8 +6,8 @@
 TEST_F(GameLogic_test, apply_rule)
 {
     std::vector<std::vector<bool>> vector(8, std::vector<bool>(8));
-    Field field(vector);
-    Field nextField(vector);
+    Field field(8, 8);
+    Field nextField(8, 8);
     Encoder encoder;
     Rules rules;
     GameLogic glogic(&encoder, &rules, &field, &nextField);
@@ -28,8 +28,8 @@ TEST_F(GameLogic_test, apply_rule)
 TEST_F(GameLogic_test, find_neighbours)
 {
     std::vector<std::vector<bool>> vector(10, std::vector<bool>(10));
-    Field field(vector);
-    Field nextField(vector);
+    Field field(10, 10);
+    Field nextField(10, 10);
     Encoder encoder;
     Rules rules;
     GameLogic glogic(&encoder, &rules, &field, &nextField);
@@ -59,8 +59,8 @@ TEST_F(GameLogic_test, find_neighbours)
 TEST_F(GameLogic_test, next_generation)
 {
     std::vector<std::vector<bool>> vector(8, std::vector<bool>(8));
-    Field field(vector);
-    Field nextField(vector);
+    Field field(8, 8);
+    Field nextField(8, 8);
     Encoder encoder;
     Rules rules;
     GameLogic glogic(&encoder, &rules, &field, &nextField);
@@ -91,4 +91,35 @@ TEST_F(GameLogic_test, next_generation)
 
     ASSERT_NE(nextFieldString, notExpectedString);
     ASSERT_EQ(nextFieldString, expectedString);
+}
+
+TEST_F(GameLogic_test, isFieldEmpty)
+{
+    std::vector<std::vector<bool>> vector(10, std::vector<bool>(10));
+    Field field(10, 10);
+    Field nextField(10, 10);
+    Encoder encoder;
+    Rules rules;
+    GameLogic glogic(&encoder, &rules, &field, &nextField);
+
+    field.setCellStatus(5, 5, true);
+
+    EXPECT_TRUE(glogic.findNeighbours(5, 5, &field) == 0);
+
+    field.setCellStatus(4, 5, true);
+    field.setCellStatus(6, 5, true);
+
+    EXPECT_FALSE(glogic.findNeighbours(5, 5, &field) == 0);
+    EXPECT_FALSE(glogic.findNeighbours(5, 5, &field) == 1);
+    EXPECT_TRUE(glogic.findNeighbours(5, 5, &field) == 2);
+
+    field.setCellStatus(4, 4, true);
+    field.setCellStatus(6, 6, true);
+
+    EXPECT_TRUE(glogic.findNeighbours(5, 5, &field) == 4);
+
+    field.setCellStatus(1, 1, true);
+
+    EXPECT_TRUE(glogic.findNeighbours(5, 5, &field) == 4);
+    EXPECT_TRUE(glogic.findNeighbours(0, 1, &field) == 1);
 }
