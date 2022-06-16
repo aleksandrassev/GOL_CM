@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.1, 2022-06-08T01:07:24. -->
+<!-- Written by QtCreator 7.0.1, 2022-06-16T00:57:52. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -69,6 +69,7 @@
    </valuemap>
    <valuemap type="QVariantMap" key="AutoTest.CheckStates">
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:Encoder_test">Checked</value>
+    <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:calculateFieldSize">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:decode">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/encoder_test.cpp:encode">Checked</value>
     <value type="Qt::CheckState" key="1@D:/QtProjects/GOL_CM/gol_server/GOL_SERVER/tests/field_test.cpp:Field_test">Checked</value>

@@ -12,10 +12,10 @@ TEST_F(Encoder_test, encode)
     QString fstr = encoder.encode(&field);
     QString fstr2 = encoder.encode(&field2);
 
-    ASSERT_TRUE(fstr == "00000\n00000\n00000\n");
-    ASSERT_TRUE(fstr2 == "00000\n00001\n01000\n");
-    ASSERT_FALSE(fstr == "00000\n00100\n00000\n");
-    ASSERT_FALSE(fstr2 == "00000\n00000\n01000\n");
+    EXPECT_EQ(fstr.toStdString(), "00000\n00000\n00000\n");
+    EXPECT_EQ(fstr2.toStdString(), "00000\n00001\n01000\n");
+    EXPECT_NE(fstr.toStdString(), "00000\n00100\n00000\n");
+    EXPECT_NE(fstr2.toStdString(), "00000\n00000\n01000\n");
 }
 
 TEST_F(Encoder_test, decode)
@@ -27,13 +27,13 @@ TEST_F(Encoder_test, decode)
     Field field = encoder.decode(fstr);
     Field field2 = encoder.decode(fstr2);
 
-    ASSERT_EQ(field.getRowSize(), 3);
-    ASSERT_EQ(field.getColSize(), 5);
-    ASSERT_EQ(field.getCellStatus(2,1), false);
-    ASSERT_EQ(field2.getCellStatus(2,1), true);
-    ASSERT_NE(field.getCellStatus(1,1), true);
-    ASSERT_NE(field2.getColSize(), 8);
-    ASSERT_NE(field2.getCellStatus(1,4), false);
+    EXPECT_EQ(field.getRowSize(), 3);
+    EXPECT_EQ(field.getColSize(), 5);
+    EXPECT_TRUE(field.getCellStatus(2,1));
+    EXPECT_TRUE(field2.getCellStatus(2,1));
+    EXPECT_FALSE(field.getCellStatus(1,1));
+    EXPECT_NE(field2.getColSize(), 8);
+    EXPECT_FALSE(field2.getCellStatus(1,4));
 }
 
 TEST_F(Encoder_test, calculateFieldSize)
@@ -42,12 +42,12 @@ TEST_F(Encoder_test, calculateFieldSize)
     QString fstr2 = "0000\n0001\n0100\n0000\n";
 
     Encoder encoder;
-    auto size_fstr = encoder.calculateFieldSize(fstr);
-    auto size_fstr2 = encoder.calculateFieldSize(fstr2);
+    auto size_fstr = encoder.parseFieldSize(fstr);
+    auto size_fstr2 = encoder.parseFieldSize(fstr2);
 
-    ASSERT_EQ(size_fstr.first, 3);
-    ASSERT_EQ(size_fstr.second, 5);
-    ASSERT_EQ(size_fstr2.first, 4);
-    ASSERT_EQ(size_fstr2.second, 4);
-    ASSERT_NE(size_fstr.first, 8);
+    EXPECT_EQ(size_fstr.first, 3);
+    EXPECT_EQ(size_fstr.second, 5);
+    EXPECT_EQ(size_fstr2.first, 4);
+    EXPECT_EQ(size_fstr2.second, 4);
+    EXPECT_NE(size_fstr.first, 8);
 }

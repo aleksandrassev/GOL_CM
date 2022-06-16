@@ -1,5 +1,6 @@
 #include "game_test.h"
 #include "mockserver.h"
+#include "mytimer.h"
 
 using testing::_;
 
@@ -33,17 +34,16 @@ TEST_F(Game_test, onNewConnect)
 
     EXPECT_TRUE(game.getConStatus());
 }
-#include "mytimer.h"
+
 TEST_F(Game_test, onTimeout)
 {
     testing::NiceMock<MockServer> mockServer;
     ON_CALL(mockServer, registerSignal(_)).WillByDefault(testing::Return());
 
-    //Game game(nullptr, &mockServer);
+    Game game(nullptr, &mockServer);
     MyTimer timer;
     timer.setInterval(300);
     timer.start();
-
 }
 
 TEST_F(Game_test, onDisconnected)

@@ -18,7 +18,7 @@ Game::Game(QObject *parent, IServer* server)
       return;
     }
 
-    m_timer = new MyTimer();
+    m_timer = new MyTimer(this);
     m_timer->registerTimerSignal(this);
     m_timer->setInterval(m_cycleInterval);
 

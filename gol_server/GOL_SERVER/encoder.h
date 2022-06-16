@@ -11,7 +11,7 @@ public:
 
     QString encode(const IField* field) override;
     Field decode(const QString& str) override;
-    std::pair<int, int> calculateFieldSize(const QString& str);
+    std::pair<int, int> parseFieldSize(const QString& str);
 };
 
 #endif // ENCODER_H

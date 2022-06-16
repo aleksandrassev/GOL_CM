@@ -10,7 +10,7 @@ class MyTimer : public QTimer
 {
     Q_OBJECT
 public:
-    explicit MyTimer(QTimer *parent = nullptr);
+    explicit MyTimer(QObject *parent = nullptr);
     ~MyTimer() override;
 
     void registerTimerSignal(ISignalHandler* callback);

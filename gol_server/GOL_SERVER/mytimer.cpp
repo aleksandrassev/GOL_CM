@@ -1,6 +1,6 @@
 #include "mytimer.h"
 
-MyTimer::MyTimer(QTimer *parent)
+MyTimer::MyTimer(QObject *parent)
     : QTimer{parent}
 {
     connect(this, &MyTimer::timeout, this, &MyTimer::onTimeout);
