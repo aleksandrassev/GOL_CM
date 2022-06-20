@@ -7,7 +7,7 @@
 class Field : public IField
 {
 public:
-    Field() = default;
+    Field();
     Field(int rows, int cols);
     ~Field() override = default;
 

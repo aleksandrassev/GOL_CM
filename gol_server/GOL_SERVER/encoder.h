@@ -10,7 +10,7 @@ public:
     ~Encoder() override = default;
 
     QString encode(const IField* field) override;
-    Field decode(const QString& str) override;
+    bool decode(const QString& str, IField* field) override;
     std::pair<int, int> parseFieldSize(const QString& str);
 };
 

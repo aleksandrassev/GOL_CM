@@ -10,7 +10,7 @@ class MockEncoder: public IEncoder
 {
 public:
     MOCK_METHOD(QString, encode, (const IField* field), (override));
-    MOCK_METHOD(Field, decode, (const QString &str), (override));
+    MOCK_METHOD(bool, decode, (const QString &str, IField* field), (override));
 };
 
 #endif // MOCKENCODER_H

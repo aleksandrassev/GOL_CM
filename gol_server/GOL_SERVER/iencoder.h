@@ -9,7 +9,7 @@ class IEncoder
 {
 public:
     virtual QString encode(const IField* field) = 0;
-    virtual Field decode(const QString& str) = 0;
+    virtual bool decode(const QString& str, IField* field) = 0;
 
 protected:
     virtual ~IEncoder() = default;

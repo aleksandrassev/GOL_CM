@@ -1,7 +1,43 @@
-#include "gamelogic_test.h"
-
-#include "rules.h"
+#include "gtest/gtest.h"
+#include "gamelogic.h"
 #include "encoder.h"
+#include "rules.h"
+#include "QDebug"
+
+class GameLogic_test : public :: testing :: Test
+{
+public:
+    void SetUp() override
+    {
+        field = new Field(8, 8);
+        nextField = new Field(8,8);
+        encoder = new Encoder();
+        rules = new Rules();
+        glogic = new GameLogic (encoder, rules, field, nextField);
+    }
+    void TearDown() override
+    {
+        delete glogic;
+        glogic = nullptr;
+
+        delete encoder;
+        encoder = nullptr;
+
+        delete rules;
+        rules = nullptr;
+
+        delete field;
+        field = nullptr;
+
+        delete nextField;
+        nextField = nullptr;
+    }
+    Field* field = nullptr;
+    Field* nextField = nullptr;
+    Encoder* encoder = nullptr;
+    Rules* rules = nullptr;
+    GameLogic* glogic = nullptr;
+};
 
 
 TEST_F(GameLogic_test, apply_rule)

@@ -81,13 +81,15 @@ int Game::onReadyReadImpl(QString &input)
     }
     input = m_server->readData();
 
+    //qDebug()<<"input: "<<input;
+
     if (input == "2\n")
     {
         restart();
         return 2;
     }
-    *m_field = m_encoder->decode(input);
-    *m_nextField = m_encoder->decode(input);
+    m_encoder->decode(input, m_field);
+    m_encoder->decode(input, m_nextField);
 
     m_timer->start();
     return 1;
@@ -112,6 +114,8 @@ void Game::run()
     qDebug() << "Game counter in server: " + QString::number(m_counter);
 
     m_server->writeData(encodedField + "!" + QString::number(m_counter));
+//    qDebug()<<"Game run:";
+//    qDebug()<<encodedField + "!" + QString::number(m_counter);
 
     if (isFieldEmpty(encodedField))
     {

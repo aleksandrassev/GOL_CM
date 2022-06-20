@@ -1,5 +1,10 @@
 #include "field.h"
 
+Field::Field()
+{
+    m_vector.resize(50, std::vector<bool>(80, false));
+}
+
 Field::Field(int rows, int cols)
 {
     m_vector.resize(rows, std::vector<bool>(cols, false));

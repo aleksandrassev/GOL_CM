@@ -26,23 +26,31 @@ QString Encoder::encode(const IField* field)
     return fieldAsString;
 }
 
-Field Encoder::decode(const QString& fieldAsString)
+bool Encoder::decode(const QString& fieldAsString, IField* field)
 {
     auto fieldSize = parseFieldSize(fieldAsString);
-    Field field (fieldSize.first, fieldSize.second);
-
     if (fieldSize.first == 0 || fieldSize.second == 0)
     {
       qCritical("zero size field in Encoder::decode");
-      return field;
+      return false;
     }
+    if (fieldSize.first != 50 || fieldSize.second != 80)
+    {
+      qCritical("warning: not default size field in Encoder::decode");
+    }
+
     int row = 0;
     int col = 0;
     for (auto &i : fieldAsString)
     {
+        if (i == '!')
+        {
+            return true;
+        }
+
         if (i != '\n')
         {
-            field.setCellStatus(row, col, i.digitValue());
+            field->setCellStatus(row, col, i.digitValue());
             col++;
         }
         else
@@ -51,7 +59,7 @@ Field Encoder::decode(const QString& fieldAsString)
             col = 0;
         }
     }
-    return field;
+    return true;
 }
 
 std::pair<int, int> Encoder::parseFieldSize(const QString& str)

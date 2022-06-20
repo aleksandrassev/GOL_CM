@@ -1,5 +1,10 @@
-#include "server_test.h"
+#include "gtest/gtest.h"
+#include "server.h"
+#include <QDebug>
 
+class Server_test: public:: testing:: Test
+{
+};
 
 TEST_F(Server_test, constructor)
 {

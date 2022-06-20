@@ -1,4 +1,10 @@
-#include "rules_test.h"
+#include "gtest/gtest.h"
+#include "rules.h"
+#include <QDebug>
+
+class Rules_test: public:: testing:: Test
+{
+};
 
 TEST_F(Rules_test, First_rule)
 {

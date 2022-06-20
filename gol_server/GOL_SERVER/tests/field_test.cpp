@@ -1,6 +1,11 @@
-#include "field_test.h"
 #include <vector>
+#include "gtest/gtest.h"
+#include "field.h"
+#include <QDebug>
 
+class Field_test: public:: testing:: Test
+{
+};
 
 TEST_F(Field_test, constructor)
 {

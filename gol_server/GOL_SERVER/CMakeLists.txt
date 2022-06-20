@@ -49,19 +49,13 @@ add_executable(GOL_SERV_CM
   game.cpp
   mytimer.h
   mytimer.cpp
-  tests/mockserver.h
-  tests/mockencoder.h
-  tests/field_test.h
+  mocks/mockserver.h
+  mocks/mockencoder.h
   tests/field_test.cpp
-  tests/encoder_test.h
   tests/encoder_test.cpp
-  tests/gamelogic_test.h
   tests/gamelogic_test.cpp
-  tests/rules_test.h
   tests/rules_test.cpp
-  tests/server_test.h
   tests/server_test.cpp
-  tests/game_test.h
   tests/game_test.cpp
 )
 
