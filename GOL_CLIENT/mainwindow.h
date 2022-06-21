@@ -8,7 +8,6 @@
 #include <iostream>
 
 #include "fieldscene.h"
-#include "datahandler.h"
 #include "myclient.h"
 
 
@@ -36,7 +35,5 @@ private:
     FieldScene *m_fieldScene;
     QGraphicsView *m_view;
     MyClient *m_client;
-    DataHandler *m_dataHandler;
-
 };
 #endif // MAINWINDOW_H

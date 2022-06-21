@@ -4,8 +4,6 @@
 #include <QObject>
 #include <QTcpSocket>
 
-#include "datahandler.h"
-
 class MyClient : public QObject
 {
     Q_OBJECT

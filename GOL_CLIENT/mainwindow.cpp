@@ -7,7 +7,6 @@ MainWindow::MainWindow(QWidget *parent)
     , m_fieldScene(new FieldScene)
     , m_view(new QGraphicsView)
     , m_client(new MyClient)
-    , m_dataHandler(new DataHandler)
 {
     setFixedSize(840,560);
 
@@ -30,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
-    delete m_dataHandler;
     delete m_client;
     delete m_ui;
     delete m_fieldScene;
@@ -66,36 +64,35 @@ void MainWindow::on_pushButtonConnect_clicked()
 
 void MainWindow::on_pushButtonStart_clicked()
 {
-    auto field = m_fieldScene->get_field();
-    QString buffer = m_dataHandler->vectorToString(field);
+    QString buffer;
+    m_fieldScene->encodeImage(buffer);
 
-    if (m_fieldScene->checkEmpty())
+    if (m_fieldScene->checkIfEmpty())
     {
         m_ui->labelCounter->setStyleSheet("font-weight: bold; color: red; font-size: 18px");
         m_ui->labelCounter->setText("Empty Field!");
+        qDebug()<<"Warning: empty field in MainWindow";
         return;
     }
-
     m_client->writeData(buffer);
 }
 
 void MainWindow::viewField()
 {
     QString buffer = m_client->readData();
-    DataHandler dataHandler;
-    int actualCount = dataHandler.separateCounter(buffer);
+    Encoder encoder;
+    int actualCount = encoder.parseCounter(buffer);
 
     m_ui->labelCounter->setStyleSheet("font-weight: bold; color: blue; font-size: 18px");
     m_ui->labelCounter->setText(QString::number(actualCount));
 
-    m_fieldScene->clear();
-    m_fieldScene->createFieldImage(buffer);
+    m_fieldScene->clearImage();
+    m_fieldScene->decodeImage(buffer);
 
-    if (m_fieldScene->checkEmpty())
+    if (m_fieldScene->checkIfEmpty())
     {
         m_ui->labelCounter->setStyleSheet("font-weight: bold; color: red; font-size: 18px");
         m_ui->labelCounter->setText("End!" + QString::number(actualCount));
-
         m_client->disconnectSocket();
     }
 }
@@ -113,7 +110,7 @@ void MainWindow::on_pushButtonRestart_clicked()
 {
     qDebug() << "initiate restart ...";
 
-    m_client->writeData("3\n");
+    m_client->writeData("2\n");
 
     m_fieldScene->clear();
     m_fieldScene->createEmptyFieldImage();

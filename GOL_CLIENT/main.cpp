@@ -1,8 +1,7 @@
-#include <QCoreApplication>
+#include "mainwindow.h"
 #include "gtest/gtest.h"
-
-#include "game.h"
-#include "server.h"
+#include <QApplication>
+#include <QCoreApplication>
 
 #define RUN_TEST 0
 
@@ -16,12 +15,9 @@ int main(int argc, char **argv)
 #else
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
-
-    Server server;
-
-    Game game(nullptr, &server);
-
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
     return a.exec();
 }
 #endif

@@ -5,6 +5,13 @@
 FieldScene::FieldScene(QObject *parent)
     : QGraphicsScene{parent}
 {
+    m_row = 50;
+    m_col = 80;
+    m_canvasSizeX = 800;
+    m_canvasSizeY = 500;
+    m_cellSize = 10;
+    m_liveValue = qRgb(240,248,25);
+    m_deadValue = qRgb(210, 210, 210);
     m_field = std::vector<std::vector<bool>>(m_row, std::vector<bool>(m_col, false));
 }
 
@@ -68,32 +75,30 @@ void FieldScene::createFieldImage()
     addPixmap(QPixmap::fromImage(image));
 }
 
-void FieldScene::createFieldImage(QString fieldString)
+void FieldScene::decodeImage(QString &fieldString)
 {
-    stringToField(fieldString);
-    createFieldImage();
-}
+    Encoder encoder;
 
-void FieldScene::stringToField(QString& stringField)
-{
-    m_field.clear();
-    std::vector<bool> line;
-
-    for (auto i : stringField)
+    if (encoder.decode(m_field, fieldString))
     {
-        if (i != '\n')
-        {
-            line.push_back(i.digitValue());
-        }
-        else
-        {
-            m_field.push_back(line);
-            line.clear();
-        }
+        createFieldImage();
+    }
+    else
+    {
+        qCritical()<<"Warning: failed to decodeImage in FieldScene";
     }
 }
 
-void FieldScene::clear()
+void FieldScene::encodeImage(QString &fieldString)
+{
+    Encoder encoder;
+    if (!encoder.encode(m_field, fieldString))
+    {
+        qCritical()<<"Warning: empty FieldString in FieldScene:encodeImage";
+    }
+}
+
+void FieldScene::clearImage()
 {
     QList <QGraphicsItem*> itemList = items();
     while(!itemList.isEmpty())
@@ -103,7 +108,7 @@ void FieldScene::clear()
     }
 }
 
-bool FieldScene::checkEmpty()
+bool FieldScene::checkIfEmpty()
 {
     for (const auto& v : m_field)
     {

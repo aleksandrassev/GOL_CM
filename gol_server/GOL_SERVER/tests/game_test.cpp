@@ -1,5 +1,7 @@
+#include "mocks/mockserver.h"
 #include "mockserver.h"
 #include "mytimer.h"
+#include "gmock/gmock.h"
 #include "gtest/gtest.h"
 #include "game.h"
 #include <QDebug>
